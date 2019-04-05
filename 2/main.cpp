@@ -58,7 +58,7 @@ real f2(const vector1D &x) {
  */
 real f3(const vector1D &x) {
 	fCalcCount++;
-	return pow((1 - x[0]), 2) + 100 * pow((x[1] - x[0] * x[0]), 2);
+	return 100 * pow((x[1] - x[0] * x[0]), 2) + pow((1 - x[0]), 2);
 }
 
 
@@ -182,10 +182,11 @@ real fibonacci(const function<real(const vector1D &x)> &f, vector1D &x, vector1D
  */
 methodResult calcByRosenbrock(const function<real(const vector1D &x)> &f, const vector1D &x0, real E, const string &funcname) {
 
-	ofstream fout("report/Rosenbrock_" + funcname + ".txt");
+	ofstream fout("report/SecondTableRosenbrock_" + funcname + ".txt");
 	ofstream steps("steps/Rosenbrock_" + funcname + ".txt");
 	fout << fixed << setprecision(4);
 	steps << fixed << setprecision(4);
+	steps << x0 << endl;
 
 	methodResult result;
 	fCalcCount = 0;
@@ -228,14 +229,14 @@ methodResult calcByRosenbrock(const function<real(const vector1D &x)> &f, const 
 			S[1] = B / calcNormE(B);
 		iterationsCount++;
 		fout << iterationsCount << "\t"
-			 << x << "\t" 
+			<< x << "\t"
 			<< f(x) << "\t"
-			<< S << "\t" 
-			<< lambda1<<"\t"
+			<< S << "\t"
+			<< lambda1 << "\t"
 			<< x - xPrev << "\t"
 			<< f(x) - f(xPrev) << "\t"
 			<< A << endl;
-		
+
 		steps << x << endl;
 	} while (abs(f(x) - f(xPrev)) > E && abs(calcNormE(x) - calcNormE(xPrev)) > E && iterationsCount < maxiter);
 
@@ -294,10 +295,11 @@ matrix2D multTwoVectorsToMatrix(const vector1D &a, const vector1D &b) {
  */
 methodResult calcByBroyden(const function<real(const vector1D &x)> &f, const vector1D &x0, real E, const string &funcname) {
 
-	ofstream fout("report/Broyden_" + funcname + ".txt");
+	ofstream fout("report/SecondTableBroyden_" + funcname + ".txt");
 	ofstream steps("steps/Broyden_" + funcname + ".txt");
 	fout << fixed << setprecision(4);
 	steps << fixed << setprecision(4);
+	steps << x0 << endl;
 
 	methodResult result;
 	fCalcCount = 0;
@@ -311,10 +313,10 @@ methodResult calcByBroyden(const function<real(const vector1D &x)> &f, const vec
 
 	do
 	{
-		if (det(A) <= 0 || !isfinite(det(A))) {
+		if (det(A) <= 0 || !isfinite(det(A)) || iterationsCount % 2 == 0) {
 			A[0] = { 1.0, 0.0 };
 			A[1] = { 0.0, 1.0 };
-			cout << "Матрица не положительно определена" << endl;
+			cout << "Matrix isn't positive-defined" << endl;
 		}
 
 		if (calcNormE(gradf) <= E || iterationsCount >= maxiter) {
@@ -346,17 +348,17 @@ methodResult calcByBroyden(const function<real(const vector1D &x)> &f, const vec
 
 		// Находится очередное приближение матрицы H^(-1)
 		matrix2D dA = multTwoVectorsToMatrix(temp, temp) / (temp * dg);
-		
+
 		if (temp * dg == 0) {
 			A[0] = { 1.0, 0.0 };
 			A[1] = { 0.0, 1.0 };
-			cout << "Деление на ноль" << endl;
+			cout << "Zero division" << endl;
 		}
 		else
 			A = A + dA;
 
 		iterationsCount++;
-		
+
 		fout << iterationsCount << "\t"
 			<< x << "\t"
 			<< f(x) << "\t"
@@ -408,25 +410,47 @@ void makeFirstTables(const function<real(const vector1D &x)> &f, const vector1D 
 }
 
 
+// Генерация первых таблиц
+void exploreConvergence(const function<real(const vector1D &x)> &f, const vector1D &x0, const string &funcname) {
 
+	ofstream foutR("report/FirstTableRosenbrock_" + funcname + ".txt");
+	ofstream foutB("report/FirstTableBroyden_" + funcname + ".txt");
+	foutR << fixed << setprecision(7);
+	foutB << fixed << setprecision(7);
+
+	methodResult result;
+
+	for (double E = 1e-3; E >= 1e-7; E /= 10)
+	{
+		result = calcByRosenbrock(f, x0, E, funcname);
+		result.printFirstResult(foutR);
+
+		result = calcByBroyden(f, x0, E, funcname);
+		result.printFirstResult(foutB);
+	}
+
+
+	foutR.close();
+	foutB.close();
+}
 
 
 void main() {
 
 	/*
-	
+
 		Начальное прилижение
 		И сброс на чётных итерациях
-	
+
 	*/
+	vector1D x0 = { 1.5, 0.5 };
+	real E = 1e-7;
 
-	vector1D x0 = { 1, 0 };
-	real E = 1e-4;
-
+	/*
 	makeFirstTables(f1, x0, "f1");
 	makeFirstTables(f2, x0, "f2");
 	makeFirstTables(f3, x0, "f3");
-
+	*/
 
 	calcByRosenbrock(f1, x0, E, "f1");
 	calcByRosenbrock(f2, x0, E, "f2");
@@ -435,4 +459,7 @@ void main() {
 	calcByBroyden(f1, x0, E, "f1");
 	calcByBroyden(f2, x0, E, "f2");
 	calcByBroyden(f3, x0, E, "f3");
+
+	string runVisualisation = "python plot.py " + to_string(x0[0]) + " " + to_string(x0[1]);
+	system(runVisualisation.c_str());
 }
