@@ -23,12 +23,13 @@ void methodResult::printFirstResult(std::ofstream &fout) {
 		<< fx << endl;
 }
 
-/* Заданная целевая функция
- * x,y - аргументы функции
- */
+
+// Заданная целевая функция
+// x - вектор аргументов функции
 real f1(const vector1D &x) {
 	// - (2 / (1 + (((x - 1) / 2)^ 2) + (((y - 1) / 1)^ 2)) +3 / (1 + (((x - 2) / 3) ^ 2) + (((y - 3) / 2) ^ 2)))
 
+	///minimize -(2/(1 + ((x - 1)/2)^2 + ((y - 1) /1)^2) + 3/(1 + ((x - 2)/3)^2 + ((y - 3)/2)^2))
 	// 1 вариант -3.5
 	int A1 = 2, A2 = 3, a1 = 1, a2 = 2, b1 = 2, b2 = 3, c1 = 1, c2 = 3, d1 = 1, d2 = 2;
 
@@ -41,21 +42,18 @@ real f1(const vector1D &x) {
 		+ A2 / (1 + pow((x[0] - a2) / b2, 2) + pow((x[1] - c2) / d2, 2)));
 }
 
-/*
-minimize -(2/(1 + ((x - 1)/2)^2 + ((y - 1) /1)^2) + 3/(1 + ((x - 2)/3)^2 + ((y - 3)/2)^2))
-*/
 
-/* Функция для исследования min=0 в точке (1,1)
- * x - вектор аргументов функции
- */
+
+// Функция для исследования min=0 в точке (1,1)
+// x - вектор аргументов функции
 real f2(const vector1D &x) {
 	fCalcCount++;
 	return 100 * pow((x[1] - x[0]), 2) + pow((1 - x[0]), 2);
 }
 
-/* Функция Розенброка min=0 в точке (1,1)
- * x - вектор аргументов функции
- */
+
+// Функция Розенброка min=0 в точке (1,1)
+// x - вектор аргументов функции
 real f3(const vector1D &x) {
 	fCalcCount++;
 	return 100 * pow((x[1] - x[0] * x[0]), 2) + pow((1 - x[0]), 2);
@@ -65,13 +63,11 @@ real f3(const vector1D &x) {
 
 
 
-/* Поиск интервала, содержащего минимум
- * f - целевая одномерная функция
- * a,b - искомые границы отрезка
- * x0 - начальная точка
- * delta - точность
- * fileName - файл, в который будет сохранён результат
- */
+// Поиск интервала, содержащего минимум
+// f - целевая одномерная функция
+// a,b - искомые границы отрезка
+// x - начальное приближение
+// S - орты (направления)
 void interval(const function<real(const vector1D &x)> &f, real &a, real &b, vector1D &x, vector1D &S)
 {
 	real lambda0 = 0.0;
@@ -118,7 +114,7 @@ void interval(const function<real(const vector1D &x)> &f, real &a, real &b, vect
 }
 
 
-/* Вычисление n-го числа Фибоначии */
+// Вычисление n-го числа Фибоначии
 inline real fib(int n)
 {
 	real sqrt5 = sqrt(5.0), pow2n = pow(2.0, n);
@@ -175,13 +171,14 @@ real fibonacci(const function<real(const vector1D &x)> &f, vector1D &x, vector1D
 }
 
 
-/* Метод Розенброка
- * f - оптимизиуремая функция
- * x0 - начальное приближение
- * E - точность
- */
+// Метод Розенброка
+// f - оптимизиуремая функция
+// x0 - начальное приближение
+// E - точность
+// funcname - название функции
 methodResult calcByRosenbrock(const function<real(const vector1D &x)> &f, const vector1D &x0, real E, const string &funcname) {
 
+	cout << endl << "Rosenbrock " << funcname << endl;
 	ofstream fout("report/SecondTableRosenbrock_" + funcname + ".txt");
 	ofstream steps("steps/Rosenbrock_" + funcname + ".txt");
 	fout << fixed << setprecision(4);
@@ -288,13 +285,14 @@ matrix2D multTwoVectorsToMatrix(const vector1D &a, const vector1D &b) {
 }
 
 
-/* Метод Бройдена
- * f - оптимизиуремая функция
- * x0 - начальное приближение
- * E - точность
- */
+// Метод Бройдена
+// f - оптимизиуремая функция
+// x0 - начальное приближение
+// E - точность
+// funcname - название функции
 methodResult calcByBroyden(const function<real(const vector1D &x)> &f, const vector1D &x0, real E, const string &funcname) {
 
+	cout << endl << "Broyden " << funcname << endl;
 	ofstream fout("report/SecondTableBroyden_" + funcname + ".txt");
 	ofstream steps("steps/Broyden_" + funcname + ".txt");
 	fout << fixed << setprecision(4);
@@ -313,11 +311,19 @@ methodResult calcByBroyden(const function<real(const vector1D &x)> &f, const vec
 
 	do
 	{
-		if (det(A) <= 0 || !isfinite(det(A)) || iterationsCount % 2 == 0) {
+		if (iterationsCount % 2 == 0) {
+			A[0] = { 1.0, 0.0 };
+			A[1] = { 0.0, 1.0 };
+			cout << "Method renewal" << endl;
+		}
+		
+		if (det(A) <= 0 || !isfinite(det(A))) {
 			A[0] = { 1.0, 0.0 };
 			A[1] = { 0.0, 1.0 };
 			cout << "Matrix isn't positive-defined" << endl;
 		}
+
+		
 
 		if (calcNormE(gradf) <= E || iterationsCount >= maxiter) {
 
@@ -437,20 +443,14 @@ void exploreConvergence(const function<real(const vector1D &x)> &f, const vector
 
 void main() {
 
-	/*
-
-		Начальное прилижение
-		И сброс на чётных итерациях
-
-	*/
-	vector1D x0 = { 1.5, 0.5 };
+	vector1D x0 = { 1.5, -0.5 };
 	real E = 1e-7;
 
-	/*
-	makeFirstTables(f1, x0, "f1");
+	
+	/*makeFirstTables(f1, x0, "f1");
 	makeFirstTables(f2, x0, "f2");
-	makeFirstTables(f3, x0, "f3");
-	*/
+	makeFirstTables(f3, x0, "f3");*/
+	
 
 	calcByRosenbrock(f1, x0, E, "f1");
 	calcByRosenbrock(f2, x0, E, "f2");

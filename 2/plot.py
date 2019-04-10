@@ -59,10 +59,8 @@ def f3(x, y):
     
 
 def makeData(f):
-    #x = numpy.arange (0.5, 2.5, 0.01)
-    #y = numpy.arange (0.5, 3.5, 0.01)
-    x = numpy.arange (-1, 2, 0.05)
-    y = numpy.arange (-1, 2, 0.05)
+    x = numpy.arange (-1, 2.5, 0.05)
+    y = numpy.arange (-1, 3.5, 0.05)
     xgrid, ygrid = numpy.meshgrid(x, y)
     zgrid = f(xgrid, ygrid)
     return xgrid, ygrid, zgrid
@@ -76,13 +74,13 @@ def singleTable(name, f, x0, y0, xExp, yExp):
     plt.scatter(x0, y0, s=20)
     plt.scatter(xExp, yExp, s=20)
     plt.savefig(folder + name + ".png")
-    #plt.show()
     plt.clf()
 
     
 
 
 if __name__ == "__main__":
+    # парсим начальное приближение
     params = sys.argv[1:3]
     x0 = float(params[0])
     y0 = float(params[1])
@@ -94,7 +92,3 @@ if __name__ == "__main__":
     singleTable("Broyden_f1", f1, x0, y0, 1.1733, 1.2109)
     singleTable("Broyden_f2", f2, x0, y0, 1, 1)
     singleTable("Broyden_f3", f3, x0, y0, 1, 1)
-
-
-
-    
