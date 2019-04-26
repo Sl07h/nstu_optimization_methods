@@ -9,12 +9,12 @@ struct methodResult
 	vector1D x0, x, xPrev, S, gradf;
 	matrix2D A;
 	real fx, fxPrev, lambda;
-	void printFirstResult(std::ofstream &fout);
+	void printResult(std::ofstream &fout);
 };
 
 
 // Вывод результатов в поток для 1 таблицы
-void methodResult::printFirstResult(std::ofstream &fout) {
+void methodResult::printResult(std::ofstream &fout) {
 	fout << E << "\t"
 		<< iterationsCount << "\t"
 		<< fCalcCount << "\t"
@@ -404,10 +404,10 @@ void makeFirstTables(const function<real(const vector1D &x)> &f, const vector1D 
 	for (double E = 1e-3; E >= 1e-7; E /= 10)
 	{
 		result = calcByRosenbrock(f, x0, E, funcname);
-		result.printFirstResult(foutR);
+		result.printResult(foutR);
 
 		result = calcByBroyden(f, x0, E, funcname);
-		result.printFirstResult(foutB);
+		result.printResult(foutB);
 	}
 
 
@@ -429,10 +429,10 @@ void exploreConvergence(const function<real(const vector1D &x)> &f, const vector
 	for (double E = 1e-3; E >= 1e-7; E /= 10)
 	{
 		result = calcByRosenbrock(f, x0, E, funcname);
-		result.printFirstResult(foutR);
+		result.printResult(foutR);
 
 		result = calcByBroyden(f, x0, E, funcname);
-		result.printFirstResult(foutB);
+		result.printResult(foutB);
 	}
 
 
