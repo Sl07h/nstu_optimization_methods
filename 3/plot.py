@@ -4,12 +4,28 @@ import sys
 import matplotlib.pyplot as plt
 import matplotlib.lines as lines
 
+DPI = 200
+
 xList = []
 yList = []
 data = []
+text = []
 
 folder = 'pics/'
 steps = 'steps/'
+
+# Считывание итогов работы метода
+def inputMethodResults(filename):
+	global text
+	global data
+	text = []
+	data = []
+	with open(steps + filename, 'r') as f:
+		for line in f: # read rest of lines
+			data.append([ int(x) for x in line.split()])
+	for i in range(len(data)):
+		text.append('iter:'+str(data[i][0])+'\nfCalc: '+str(data[i][1]))
+
 
 # Считывание хода метода
 def inputSteps(filename):
@@ -25,9 +41,8 @@ def inputSteps(filename):
 	for i in range(len(data)):
 		xList.append(data[i][0])
 		yList.append(data[i][1])
+
 		
-
-
 # Целевая функция
 def f(x, y):
 	return 4*(y-x)**2 + 3*(x-1)**2
@@ -54,19 +69,29 @@ def drawFines():
 
 
 # Отрисовка сходимости метода
-def drawMethodConvergence(name, f, x0, y0, xExp, yExp):
+def drawMethodConvergence(name, f, index, x0, y0, xExp, yExp):
+	global text
 	inputSteps(name + '.txt')
 	drawFines()
 	x, y, z = buildIsoLines(f)
 	cs = pylab.contour(x, y, z, 25)
 	plt.plot(xList, yList, linewidth=1)
+	for i in range(len(xList)):
+		plt.scatter(xList[i], yList[i], s=2, color='black')
 	plt.title(name, fontsize=19)
 	plt.xlabel('X', fontsize=10)
 	plt.ylabel('Y', fontsize=10)
 	plt.tick_params(axis='both', labelsize=8)
 	plt.scatter(x0, y0, s=20)
 	plt.scatter(xExp, yExp, s=20)
-	plt.savefig(folder + name + '.png')
+	plt.text(2, 2, text[index], size=12,
+         ha="center", va="center",
+         bbox=dict(boxstyle="square",
+                   ec=(.5, .5, .5),
+                   fc=(.8, .8, 0.8),
+                   )
+         )
+	plt.savefig(folder + name + '.png', dpi=DPI)
 	plt.clf()
 
 
@@ -81,8 +106,8 @@ def drawPointsAtResearch(name, f):
 	plt.ylabel('Y', fontsize=10)
 	plt.tick_params(axis='both', labelsize=8)
 	for i in range(len(xList)):
-		plt.scatter(xList[i], yList[i], s=20)
-	plt.savefig(folder + name + '.png')
+		plt.scatter(xList[i], yList[i], s=5)
+	plt.savefig(folder + name + '.png', dpi=DPI)
 	plt.clf()
 
 
@@ -97,16 +122,36 @@ if __name__ == '__main__':
 	xExp = 1
 	yExp = 1
 
-	drawMethodConvergence('Rosenbrock_Q1', f, x0Fine, y0Fine, xExp, yExp)
-	drawMethodConvergence('Rosenbrock_Q2', f, x0Fine, y0Fine, xExp, yExp)
-	drawMethodConvergence('Rosenbrock_Q3', f, x0Fine, y0Fine, xExp, yExp)
-	drawMethodConvergence('Rosenbrock_Q4', f, x0Barrier, y0Barrier, xExp, yExp)
-	drawMethodConvergence('Rosenbrock_Q5', f, x0Barrier, y0Barrier, xExp, yExp)
+	inputMethodResults('Rosenbrock_Q.txt')
+	drawMethodConvergence('Rosenbrock_Q1', f, 0, x0Fine, y0Fine, xExp, yExp)
+	drawMethodConvergence('Rosenbrock_Q2', f, 1, x0Fine, y0Fine, xExp, yExp)
+	drawMethodConvergence('Rosenbrock_Q3', f, 2, x0Fine, y0Fine, xExp, yExp)
+	drawMethodConvergence('Rosenbrock_Q4', f, 3, x0Barrier, y0Barrier, xExp, yExp)
+	drawMethodConvergence('Rosenbrock_Q5', f, 4, x0Barrier, y0Barrier, xExp, yExp)
 	
-	drawPointsAtResearch('tableEFines', f)
-	drawPointsAtResearch('tableRFirstFines', f)
-	drawPointsAtResearch('tableRMultFines', f)
+	
+	inputMethodResults('Rosenbrock_Q_1.txt')
+	drawMethodConvergence('Rosenbrock_Q1_1', f, 0, x0Fine, y0Fine, xExp, yExp)
+	drawMethodConvergence('Rosenbrock_Q2_1', f, 1, x0Fine, y0Fine, xExp, yExp)
+	drawMethodConvergence('Rosenbrock_Q3_1', f, 2, x0Fine, y0Fine, xExp, yExp)
+	drawMethodConvergence('Rosenbrock_Q4_1', f, 3, x0Barrier, y0Barrier, xExp, yExp)
+	drawMethodConvergence('Rosenbrock_Q5_1', f, 4, x0Barrier, y0Barrier, xExp, yExp)
+	
 
+	inputMethodResults('Rosenbrock_Q_2.txt')
+	drawMethodConvergence('Rosenbrock_Q1_2', f, 0, x0Fine, y0Fine, xExp, yExp)
+	drawMethodConvergence('Rosenbrock_Q2_2', f, 1, x0Fine, y0Fine, xExp, yExp)
+	drawMethodConvergence('Rosenbrock_Q3_2', f, 2, x0Fine, y0Fine, xExp, yExp)
+	drawMethodConvergence('Rosenbrock_Q4_2', f, 3, x0Barrier, y0Barrier, xExp, yExp)
+	drawMethodConvergence('Rosenbrock_Q5_2', f, 4, x0Barrier, y0Barrier, xExp, yExp)
+	
+
+
+	drawPointsAtResearch('tableEFines', f)
 	drawPointsAtResearch('tableEBarriers', f)
-	drawPointsAtResearch('tableRFirstBarriers', f)
+	
+	drawPointsAtResearch('tableRMultFines', f)
 	drawPointsAtResearch('tableRMultBarriers', f)
+
+	drawPointsAtResearch('tableRFirstFines', f)
+	drawPointsAtResearch('tableRFirstBarriers', f)

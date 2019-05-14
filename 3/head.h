@@ -1,5 +1,6 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
+#define UNICODE
 #include <fstream>
 #include <iostream>
 #include <vector>
@@ -147,10 +148,19 @@ inline real operator*(const vector1D& a, const vector1D& b) {
 
 // Потоковый вывод вектора
 inline std::ostream& operator<<(std::ostream& out, const vector1D& v) {
+
 	for (int i = 0; i < v.size() - 1; ++i)
 		out << v[i] << " ";
 	out << v.back();
 	return out;
+}
+
+// Потоковый вывод вектора для TeX
+inline void printTeXVector(std::ofstream &fout, const vector1D &v) {
+	fout << "$(";
+	for (int i = 0; i < v.size() - 1; ++i)
+		fout << v[i] << ", ";
+	fout << v.back() << ")^T$";
 }
 
 // Потоковый вывод матрицы

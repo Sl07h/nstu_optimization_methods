@@ -1,0 +1,459 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[russian]{babel}
+\usepackage{fontspec}
+\setsansfont{Calibri}
+\setmonofont{Consolas}
+\setmainfont[
+    Ligatures=TeX,
+    Extension=.otf,
+    BoldFont=cmunbx,
+    ItalicFont=cmunti,
+    BoldItalicFont=cmunbi,
+]{cmunrm}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+
+
+\usepackage{geometry}
+\usepackage{pgfplotstable}
+
+\geometry{
+margin=2cm
+}
+
+
+\usepackage{indentfirst}
+
+\usepackage{arydshln}
+\usepackage[fleqn]{amsmath}
+\usepackage{xfrac}
+\usepackage{esint}
+\usepackage{amssymb}
+\usepackage{mathbbol}
+\usepackage[T1]{fontenc}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{ulem}
+\usepackage{tabu}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{rotating}
+
+\usepackage[outline]{contour}
+\contourlength{1.2pt}
+
+%\usepackage{tikz}
+\usepackage{graphics}
+\usepackage{xcolor}
+
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+
+
+\usepackage[at]{easylist}
+
+\DeclareMathOperator{\sign}{sign}
+
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+
+
+\newcommand{\insertTitle}[7]{
+\begin{titlepage}
+	\begin{center}
+    	\large
+		Министерство науки и высшего образования Российской Федерации
+		
+		Новосибирский государственный технический университет
+		%\vspace{0.25cm}
+		\vfill
+		{\textbf #1}
+		
+		Лабораторная работа №#2
+		\vfill
+	\end{center}
+	
+	\begin{tabular}{ m{7em}  m{7em} }
+	Факультет: & ФПМИ \\ 
+	Группа: & #3 \\  
+	Студенты: & #4 \\
+	& #5 \\
+	Вариант: & #6
+	\end{tabular}
+	\vfill
+
+\begin{center}
+Новосибирск
+
+#7
+\end{center}
+\end{titlepage}
+}
+
+
+\pgfplotstableset{
+%\rowcolors{2}{gray!25}{white}
+	begin table={\begin{tabular}},
+	end table=\end{tabular},
+}
+
+
+
+\newcommand{\inputTableE}[1]{
+\noindent\begin{center}\pgfplotstabletypeset[
+	columns/E/.style={column name={$\varepsilon$},},
+	columns/iter/.style={column name={\scriptsize Итераций},},
+	columns/fCalc/.style={column name={\scriptsize Вычислений $f$},},
+	columns/r/.style={column name={\scriptsize r},},
+	columns/x/.style={string type, column name={$\mathbf{x}$},},
+	columns/fx/.style={column name={$f(\mathbf{x})$}, column type/.add={}{|},},
+	every head row/.style={before row=\hline,after row=\hline\hline}, 
+	every last row/.style={after row=\hline},
+	column type/.add={|}{},
+	col sep=tab,
+]{#1}
+\end{center}
+}
+
+
+\newcommand{\inputTableRFirst}[1]{
+\noindent\begin{center}\pgfplotstabletypeset[
+	columns/rFirst/.style={column name={$r_0$},},
+	columns/iter/.style={column name={\scriptsize Итераций},},
+	columns/fCalc/.style={column name={\scriptsize Вычислений f},},
+	columns/r/.style={column name={\scriptsize r},},
+	columns/x/.style={string type, column name={$\mathbf{x}$},},
+	columns/fx/.style={column name={$f(\mathbf{x})$}, column type/.add={}{|},},
+	every head row/.style={before row=\hline,after row=\hline\hline}, 
+	every last row/.style={after row=\hline},
+	column type/.add={|}{},
+	col sep=tab,
+]{#1}
+\end{center}
+}
+
+
+\newcommand{\inputTableRMult}[1]{
+\noindent\begin{center}\pgfplotstabletypeset[
+	columns/rMult/.style={column name={$rMult$},},
+	columns/iter/.style={column name={\scriptsize Итераций},},
+	columns/fCalc/.style={column name={\scriptsize Вычислений $f$},},
+	columns/r/.style={column name={\scriptsize r},},
+	columns/x/.style={string type, column name={$\mathbf{x}$},},
+	columns/fx/.style={column name={$f(\mathbf{x})$}, column type/.add={}{|},},
+	every head row/.style={before row=\hline,after row=\hline\hline}, 
+	every last row/.style={after row=\hline},
+	column type/.add={|}{},
+	col sep=tab,
+]{#1}
+\end{center}
+}
+
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.85,0.85,0.85}
+ 
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{blue},
+	basicstyle=\fontsize{10}{12}\selectfont\ttfamily,
+   	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+    	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=4
+}
+\lstset{ style=mystyle}
+
+
+\newcommand{\funcGOne}[0]{
+\[ G_j[g_j({\bar x})] = {\frac {1}{2}} {\bigl\{ {g_j({\bar x}) + {\bigl| g_j({\bar x}) }\bigr| \bigr\} }} \] }
+
+\newcommand{\funcGTwo}[0]{
+\[ G_j[g_j({\bar x})] = {\Bigl[ {\frac {1}{2}} {\bigl\{ {g_j({\bar x}) + {\bigl| g_j({\bar x}) }\bigr| \bigr\} }} \Bigr]}^2 \] }
+
+\newcommand{\funcGThree}[0]{
+\[ G_j[g_j({\bar x})] = {\Bigl[ {\frac {1}{2}} {\bigl\{ {g_j({\bar x}) + {\bigl| g_j({\bar x}) }\bigr| \bigr\} }} \Bigr]}^\alpha \text{,если } \alpha \text{ чётное}  \] }
+
+\newcommand{\funcGFour}[0]{
+\[ G_j[g_j({\bar x})] = {-\frac {1}{ g_j({\bar x}) } } \] }
+
+\newcommand{\funcGFive}[0]{
+\[ G_j[g_j({\bar x})] = {-ln \Bigl[{-g_j({\bar x})} \Bigr] } \] }
+
+
+
+\newcommand{\funcInTextGOne}[0]{
+$ G_j[g_j({\bar x})] = {\frac {1}{2}} {\bigl\{ {g_j({\bar x}) + {\bigl| g_j({\bar x}) }\bigr| \bigr\} }} $ }
+
+\newcommand{\funcInTextGTwo}[0]{
+$ G_j[g_j({\bar x})] = {\Bigl[ {\frac {1}{2}} {\bigl\{ {g_j({\bar x}) + {\bigl| g_j({\bar x}) }\bigr| \bigr\} }} \Bigr]}^2 $ }
+
+\newcommand{\funcInTextGThree}[0]{
+$ G_j[g_j({\bar x})] = {\Bigl[ {\frac {1}{2}} {\bigl\{ {g_j({\bar x}) + {\bigl| g_j({\bar x}) }\bigr| \bigr\} }} \Bigr]}^\alpha \text{,если } \alpha \text{ чётное}  $ }
+
+\newcommand{\funcInTextGFour}[0]{
+$ G_j[g_j({\bar x})] = {-\frac {1}{ g_j({\bar x}) } } $ }
+
+\newcommand{\funcInTextGFive}[0]{
+$ G_j[g_j({\bar x})] = {-ln \Bigl[{-g_j({\bar x})} \Bigr] } $ }
+
+
+
+\newcommand{\myCodeInput}[3]{
+{\bf #2}
+\lstinputlisting[language=#1]{#3}
+}
+
+% Размер изображений [0, 1]
+\newcommand{\picSize}{0.7}
+
+\setlength{\abovedisplayskip}{0.5pt}
+\setlength{\belowdisplayskip}{0.5pt}
+
+
+
+\newcommand{\inputTwoImages}[2]{
+\begin{figure}[!htb]
+    \vspace{-2ex}
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{#1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{#2}
+    \end{minipage}
+    \hspace{-2ex}
+\end{figure}
+
+}
+
+
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+
+
+\begin{document}
+
+%-------------------------------------------------------------------------------%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+\insertTitle{Методы оптимизации}{3}{ПМ-63}{Кожекин М.В.}{Утюганов Д.С.}{5}{2019}
+
+
+
+
+%-------------------------------------------------------------------------------%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+\section{Цель работы}
+
+Ознакомиться с методами штрафных функций при решении задач нелинейного программирования. Изучить типы штрафных и барьерных функций, их особенности, способы и области применения, влияние штрафных функций на сходимость алгоритмов, зависимость точности решения задачи нелинейного программирования от величины коэффициента штрафа.
+
+
+
+
+%-------------------------------------------------------------------------------%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+\section{Задание}
+
+Применяя методы поиска минимума 0-го порядка, реализовать программу для решения задачи нелинейного программирования с использованием {\bf метода штрафных функций}. 
+
+Исследовать сходимость {\bf метода штрафных функций} в зависимости от
+\begin{itemize}
+	\item[$-$] выбора штрафных функций,
+	\item[$-$] начальной величины коэффициента штрафа,
+	\item[$-$] стратегии изменения коэффициента штрафа,
+	\item[$-$] начальной точки,
+	\item[$-$] задаваемой точности.
+\end{itemize}
+
+Сформулировать выводы.
+
+Применяя методы поиска минимума 0-го порядка, реализовать программу для решения задачи нелинейного программирования с ограничением типа неравенства {\bf (только пункт а)} с использованием {\bf метода барьерных функций}.
+
+Исследовать сходимость {\bf метода барьерных функций (только пункт а)} в зависимости от
+
+\begin{itemize}
+	\item[$-$]выбора барьерных функций,
+	\item[$-$]начальной величины коэффициента штрафа,
+	\item[$-$]стратегии изменения коэффициента штрафа,
+	\item[$-$]начального приближения,
+	\item[$-$]задаваемой точности.
+\end{itemize}
+
+Сформулировать выводы.
+
+{\bf Вариант 5}
+
+При ограничении:
+
+а) x + y <= -1
+
+б) y = x + 1
+
+
+
+
+%-------------------------------------------------------------------------------%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+\section{Исследование сходимости метода штрафных функций}
+\funcGOne{}
+\includegraphics[width=\picSize\linewidth]{../pics/Rosenbrock_Q1.png}
+\funcGTwo{}
+\includegraphics[width=\picSize\linewidth]{../pics/Rosenbrock_Q2.png}
+\funcGThree{}
+\includegraphics[width=\picSize\linewidth]{../pics/Rosenbrock_Q3.png}
+
+%-------------------------------------------------------------------------------
+\subsection{Вывод}
+
+Повышение степени ${ \alpha }$ в штрафной функции ведёт к повышению числа итераций и вычислений целевой функции.
+
+
+
+
+%-------------------------------------------------------------------------------%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+\section{Исследование сходимости метода барьерных функций}
+
+\funcGFour{}
+\includegraphics[width=\picSize\linewidth]{../pics/Rosenbrock_Q4.png}
+\funcGFive{}
+\includegraphics[width=\picSize\linewidth]{../pics/Rosenbrock_Q5.png}
+
+%-------------------------------------------------------------------------------
+\subsection{Вывод}
+
+Первая барьерная функция \funcInTextGFour{} находит неоптимальное решение, но всего за 1 итерацию.
+
+Вторая барьерная функия \funcInTextGFive{} находит глобальный минимум за несколько десятков итераций.
+
+
+
+
+%-------------------------------------------------------------------------------%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+\section{Зависимость скорости сходимости метода от заданной точности}
+
+\funcGOne{}
+\inputTableE{tableE1.txt}
+\funcGTwo{}
+\inputTableE{tableE2.txt}
+\funcGThree{}
+\inputTableE{tableE3.txt}
+\funcGFour{}
+\inputTableE{tableE4.txt}
+\funcGFive{}
+\inputTableE{tableE5.txt}
+%-------------------------------------------------------------------------------
+\subsection{Вывод}
+
+Повышение точности ведёт как к повышению точности решения, так и росту количества вычислений целевой функции.
+
+
+
+
+%-------------------------------------------------------------------------------%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+\section{Зависимость скорости сходимости метода от  коэффициента изменения штрафа}
+
+\funcGOne{}
+\inputTableRMult{tableRMult1.txt}
+\funcGTwo{}
+\inputTableRMult{tableRMult2.txt}
+\funcGThree{}
+\inputTableRMult{tableRMult3.txt}
+\funcGFour{}
+\inputTableRMult{tableRMult4.txt}
+\funcGFive{}
+\inputTableRMult{tableRMult5.txt}
+%-------------------------------------------------------------------------------
+\subsection{Вывод}
+
+Рост коэффициента изменения штрафа ведёт к уменьшению числа итераций и вычислений целевой функции
+
+
+
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+\section{Зависимость скорости сходимости метода от начального значения штрафа}
+
+\funcGOne{}
+\inputTableRFirst{tableRFirst1.txt}
+\funcGTwo{}
+\inputTableRFirst{tableRFirst2.txt}
+\funcGThree{}
+\inputTableRFirst{tableRFirst3.txt}
+\funcGFour{}
+\inputTableRFirst{tableRFirst4.txt}
+\funcGFive{}
+\inputTableRFirst{tableRFirst5.txt}
+%-------------------------------------------------------------------------------
+\subsection{Вывод}
+
+Для метода барьеров рост начального значения штрафа ведёт к тому, что метод в первую очередь стремится не найти локальный минимум, а в первую очередь стремится отойти как можно дальше от штрафной области.
+
+
+
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+\section{Зависимость скорости сходимости метода от начального приближения}
+
+Параметры методов:
+\begin{trivlist}
+	\item $ E = 1e^{-12} $
+	\item $ r_0 = 10 $
+	\item $ rMult = 2 $
+	\item $ \alpha = 8 $
+	\item $ x_{0 \text{штраф.}} = (2.5, -2) $
+	\item $ x_{0 \text{бар.}} = (0, -2) $
+\end{trivlist}
+
+ 
+
+\funcGOne{}
+\inputTwoImages{../pics/Rosenbrock_Q1_1.png}{../pics/Rosenbrock_Q1_2.png}
+\funcGTwo{}
+\inputTwoImages{../pics/Rosenbrock_Q2_1.png}{../pics/Rosenbrock_Q2_2.png}
+\funcGThree{}
+\inputTwoImages{../pics/Rosenbrock_Q3_1.png}{../pics/Rosenbrock_Q3_2.png}
+\funcGFour{}
+\inputTwoImages{../pics/Rosenbrock_Q4_1.png}{../pics/Rosenbrock_Q4_2.png}
+\funcGFive{}
+\inputTwoImages{../pics/Rosenbrock_Q5_1.png}{../pics/Rosenbrock_Q5_2.png}
+
+%-------------------------------------------------------------------------------
+\subsection{Вывод}
+
+Начальное приближение находящееся в области штрафа заставляет метод быстро покинуть его
+
+
+
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+\section{Исходный код программы}
+\myCodeInput{c++}{head.h}{../head.h}
+\myCodeInput{c++}{main.cpp}{../main.cpp}
+\myCodeInput{python}{plot.py}{../plot.py}
+
+\end{document}

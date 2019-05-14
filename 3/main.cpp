@@ -23,11 +23,10 @@ void methodResult::printResultE(std::ofstream &fout) {
 	fout << E << "\t"
 		<< iterationsCount << "\t"
 		<< fCalcCount << "\t"
-		<< r << "\t"
-		<< x << "\t"
-		<< fx << endl;
+		<< r << "\t";
+	printTeXVector(fout, x);
+	fout << "\t" << fx << endl;
 }
-
 
 
 // Вывод результатов в поток
@@ -35,9 +34,9 @@ void methodResult::printResultR(std::ofstream &fout) {
 	fout << rMult << "\t"
 		<< iterationsCount << "\t"
 		<< fCalcCount << "\t"
-		<< r << "\t"
-		<< x << "\t"
-		<< fx << endl;
+		<< r << "\t";
+	printTeXVector(fout, x);
+	fout << "\t" << fx << endl;
 }
 
 
@@ -46,10 +45,11 @@ void methodResult::printResultRFirst(std::ofstream &fout) {
 	fout << r0 << "\t"
 		<< iterationsCount << "\t"
 		<< fCalcCount << "\t"
-		<< r << "\t"
-		<< x << "\t"
-		<< fx << endl;
+		<< r << "\t";
+	printTeXVector(fout, x);
+	fout << "\t" << fx << endl;
 }
+
 
 
 //------------------------------------------------------------------------------
@@ -61,11 +61,13 @@ inline real f(const vector1D &x) {
 }
 
 
+
 // Ограничение области
 inline real g(const vector1D &x) {
 	gCalcCount++;
 	return x[0] + x[1] + 1;
 }
+
 
 
 //------------------------------------------------------------------------------
@@ -229,8 +231,7 @@ real fibonacci(const function<real(const vector1D &x)> &f, vector1D &x, vector1D
 // E - точность
 // funcname - название функции
 methodResult calcByRosenbrock(const function<real(const vector1D &x)> &f, const function<real(const vector1D &x)> &G, const vector1D &x0, real r0, real E, const string &funcname, bool isFineNotBarier) {
-
-	cout << endl << "Rosenbrock " << funcname << endl;
+		
 	ofstream fout("report/tableRosenbrock_" + funcname + ".txt");
 	ofstream steps("steps/Rosenbrock_" + funcname + ".txt");
 	fout << scientific;
@@ -314,39 +315,109 @@ methodResult calcByRosenbrock(const function<real(const vector1D &x)> &f, const 
 
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
-// Таблицы
+// Исследования
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
 
-// Одиночный тест
-void singleTest()
+// Исследование сходимости
+void researchConvergence()
 {
+	cout << "Research of convergence" << endl;
+	ofstream fout("steps/Rosenbrock_Q.txt");
 	real E = 1e-12;
 	real r0 = 10;
 	rMult = 2;
-	alpha = 4;
-
+	alpha = 12;
+	methodResult result;
 	vector1D x0Fine = { -2, 0 };
 	vector1D x0Barrier = { 0, -2 };
-	
-	calcByRosenbrock(Q1, G1, x0Fine, r0, E, "Q1", true);
-	calcByRosenbrock(Q2, G2, x0Fine, r0, E, "Q2", true);
-	calcByRosenbrock(Q3, G3, x0Fine, r0, E, "Q3", true);
-	calcByRosenbrock(Q4, G4, x0Barrier, r0, E, "Q4", false);
-	calcByRosenbrock(Q5, G5, x0Barrier, r0, E, "Q5", false);
+	fout << scientific;
+	result = calcByRosenbrock(Q1, G1, x0Fine, r0, E, "Q1", true);
+	fout << result.iterationsCount << " " << result.fCalcCount << endl;
+	result = calcByRosenbrock(Q2, G2, x0Fine, r0, E, "Q2", true);
+	fout << result.iterationsCount << " " << result.fCalcCount << endl;
+	result = calcByRosenbrock(Q3, G3, x0Fine, r0, E, "Q3", true);
+	fout << result.iterationsCount << " " << result.fCalcCount << endl;
+	result = calcByRosenbrock(Q4, G4, x0Barrier, r0, E, "Q4", false);
+	fout << result.iterationsCount << " " << result.fCalcCount << endl;
+	result = calcByRosenbrock(Q5, G5, x0Barrier, r0, E, "Q5", false);
+	fout << result.iterationsCount << " " << result.fCalcCount << endl;
 
 	// Визуализация
 	string runVisualisation = "python plot.py "
 		+ to_string(x0Fine[0]) + " " + to_string(x0Fine[1]) + " "
 		+ to_string(x0Barrier[0]) + " " + to_string(x0Barrier[1]);
 	system(runVisualisation.c_str());
+	fout.close();
 }
+
+
+// Зависимость скорости сходимости метода от заданной точности
+void researchE()
+{
+	cout << "Research E" << endl;
+	ofstream foutF("steps/tableEFines.txt");
+	ofstream foutB("steps/tableEBarriers.txt");
+	ofstream fout1("report/tableE1.txt");
+	ofstream fout2("report/tableE2.txt");
+	ofstream fout3("report/tableE3.txt");
+	ofstream fout4("report/tableE4.txt");
+	ofstream fout5("report/tableE5.txt");
+	fout1 << scientific << "E\titer\tfCalc\tr\tx\tfx" << endl;
+	fout2 << scientific << "E\titer\tfCalc\tr\tx\tfx" << endl;
+	fout3 << scientific << "E\titer\tfCalc\tr\tx\tfx" << endl;
+	fout4 << scientific << "E\titer\tfCalc\tr\tx\tfx" << endl;
+	fout5 << scientific << "E\titer\tfCalc\tr\tx\tfx" << endl;
+
+	methodResult result;
+	real r0 = 10;
+	rMult = 2;
+	alpha = 8;
+	vector1D x0Fine = { -2, 0 };
+	vector1D x0Barrier = { 0, -2 };
+
+	for (double E = 1e-3; E >= 1e-7; E /= 10)
+	{
+		result = calcByRosenbrock(Q1, G1, x0Fine, r0, E, "Q1", true);
+		result.printResultE(fout1);
+		foutF << result.x << endl;
+		result = calcByRosenbrock(Q2, G2, x0Fine, r0, E, "Q2", true);
+		result.printResultE(fout2);
+		foutF << result.x << endl;
+		result = calcByRosenbrock(Q3, G3, x0Fine, r0, E, "Q3", true);
+		result.printResultE(fout3);
+		foutF << result.x << endl;
+
+		result = calcByRosenbrock(Q4, G4, x0Barrier, r0, E, "Q4", false);
+		result.printResultE(fout4);
+		foutB << result.x << endl;
+		result = calcByRosenbrock(Q5, G5, x0Barrier, r0, E, "Q5", false);
+		result.printResultE(fout5);
+		foutB << result.x << endl;
+	}
+
+	// Визуализация
+	string runVisualisation = "python plot.py "
+		+ to_string(x0Fine[0]) + " " + to_string(x0Fine[1]) + " "
+		+ to_string(x0Barrier[0]) + " " + to_string(x0Barrier[1]);
+	system(runVisualisation.c_str());
+
+	foutF.close();
+	foutB.close();
+	fout1.close();
+	fout2.close();
+	fout3.close();
+	fout4.close();
+	fout5.close();
+}
+
 
 
 // Зависимость скорости сходимости метода от стратегии изменения коэффициента штрафа
 void researchRMult()
 {
+	cout << "Research r^mult" << endl;
 	ofstream foutF("steps/tableRMultFines.txt");
 	ofstream foutB("steps/tableRMultBarriers.txt");
 	ofstream fout1("report/tableRMult1.txt");
@@ -354,11 +425,11 @@ void researchRMult()
 	ofstream fout3("report/tableRMult3.txt");
 	ofstream fout4("report/tableRMult4.txt");
 	ofstream fout5("report/tableRMult5.txt");
-	fout1 << scientific;
-	fout2 << scientific;
-	fout3 << scientific;
-	fout4 << scientific;
-	fout5 << scientific;
+	fout1 << scientific << "rMult\titer\tfCalc\tr\tx\tfx" << endl;
+	fout2 << scientific << "rMult\titer\tfCalc\tr\tx\tfx" << endl;
+	fout3 << scientific << "rMult\titer\tfCalc\tr\tx\tfx" << endl;
+	fout4 << scientific << "rMult\titer\tfCalc\tr\tx\tfx" << endl;
+	fout5 << scientific << "rMult\titer\tfCalc\tr\tx\tfx" << endl;
 
 	methodResult result;
 	real E = 1e-12;
@@ -408,18 +479,19 @@ void researchRMult()
 // Зависимость скорости сходимости метода от стратегии изменения коэффициента штрафа
 void researchRFirst()
 {
+	cout << "Research r_0" << endl;
 	ofstream foutF("steps/tableRFirstFines.txt");
-	ofstream foutB("steps/tableRFirstBarriers.txt"); 
+	ofstream foutB("steps/tableRFirstBarriers.txt");
 	ofstream fout1("report/tableRFirst1.txt");
 	ofstream fout2("report/tableRFirst2.txt");
 	ofstream fout3("report/tableRFirst3.txt");
 	ofstream fout4("report/tableRFirst4.txt");
 	ofstream fout5("report/tableRFirst5.txt");
-	fout1 << scientific;
-	fout2 << scientific;
-	fout3 << scientific;
-	fout4 << scientific;
-	fout5 << scientific;
+	fout1 << scientific << "rFirst\titer\tfCalc\tr\tx\tfx" << endl;
+	fout2 << scientific << "rFirst\titer\tfCalc\tr\tx\tfx" << endl;
+	fout3 << scientific << "rFirst\titer\tfCalc\tr\tx\tfx" << endl;
+	fout4 << scientific << "rFirst\titer\tfCalc\tr\tx\tfx" << endl;
+	fout5 << scientific << "rFirst\titer\tfCalc\tr\tx\tfx" << endl;
 
 	methodResult result;
 	real E = 1e-12;
@@ -465,71 +537,67 @@ void researchRFirst()
 
 
 
-// Зависимость скорости сходимости метода от заданной точности
-void researchE()
+// Зависимость скорости сходимости метода от начального приближения
+void researchXFirst()
 {
-	ofstream foutF("steps/tableEFines.txt");
-	ofstream foutB("steps/tableEBarriers.txt");
-	ofstream fout1("report/tableE1.txt");
-	ofstream fout2("report/tableE2.txt");
-	ofstream fout3("report/tableE3.txt");
-	ofstream fout4("report/tableE4.txt");
-	ofstream fout5("report/tableE5.txt");
-	fout1 << scientific;
-	fout2 << scientific;
-	fout3 << scientific;
-	fout4 << scientific;
-	fout5 << scientific;
-
+	cout << "Research x_0" << endl;
 	methodResult result;
+	real E = 1e-12;
 	real r0 = 10;
 	rMult = 2;
 	alpha = 8;
-	vector1D x0Fine = { -2, 0 };
+	vector1D x0Fine = { 2, -2 };
 	vector1D x0Barrier = { 0, -2 };
-
-	for (double E = 1e-3; E >= 1e-7; E /= 10)
-	{
-		result = calcByRosenbrock(Q1, G1, x0Fine, r0, E, "Q1", true);
-		result.printResultE(fout1);
-		foutF << result.x << endl;
-		result = calcByRosenbrock(Q2, G2, x0Fine, r0, E, "Q2", true);
-		result.printResultE(fout2);
-		foutF << result.x << endl;
-		result = calcByRosenbrock(Q3, G3, x0Fine, r0, E, "Q3", true);
-		result.printResultE(fout3);
-		foutF << result.x << endl;
-
-		result = calcByRosenbrock(Q4, G4, x0Barrier, r0, E, "Q4", false);
-		result.printResultE(fout4);
-		foutB << result.x << endl;
-		result = calcByRosenbrock(Q5, G5, x0Barrier, r0, E, "Q5", false);
-		result.printResultE(fout5);
-		foutB << result.x << endl;
-	}
+	
+	ofstream fout1("steps/Rosenbrock_Q_1.txt");
+	result = calcByRosenbrock(Q1, G1, x0Fine, r0, E, "Q1_1", true);
+	fout1 << result.iterationsCount << " " << result.fCalcCount << endl;
+	result = calcByRosenbrock(Q2, G2, x0Fine, r0, E, "Q2_1", true);
+	fout1 << result.iterationsCount << " " << result.fCalcCount << endl;
+	result = calcByRosenbrock(Q3, G3, x0Fine, r0, E, "Q3_1", true);
+	fout1 << result.iterationsCount << " " << result.fCalcCount << endl;
+	result = calcByRosenbrock(Q4, G4, x0Barrier, r0, E, "Q4_1", false);
+	fout1 << result.iterationsCount << " " << result.fCalcCount << endl;
+	result = calcByRosenbrock(Q5, G5, x0Barrier, r0, E, "Q5_1", false);
+	fout1 << result.iterationsCount << " " << result.fCalcCount << endl;
 
 	// Визуализация
 	string runVisualisation = "python plot.py "
 		+ to_string(x0Fine[0]) + " " + to_string(x0Fine[1]) + " "
 		+ to_string(x0Barrier[0]) + " " + to_string(x0Barrier[1]);
 	system(runVisualisation.c_str());
-
-	foutF.close();
-	foutB.close();
 	fout1.close();
+
+
+	ofstream fout2("steps/Rosenbrock_Q_2.txt");
+	x0Fine = { -2, -2 };
+	x0Barrier = { -2, -2 };
+	result = calcByRosenbrock(Q1, G1, x0Fine, r0, E, "Q1_2", true);
+	fout2 << result.iterationsCount << " " << result.fCalcCount << endl;
+	result = calcByRosenbrock(Q2, G2, x0Fine, r0, E, "Q2_2", true);
+	fout2 << result.iterationsCount << " " << result.fCalcCount << endl;
+	result = calcByRosenbrock(Q3, G3, x0Fine, r0, E, "Q3_2", true);
+	fout2 << result.iterationsCount << " " << result.fCalcCount << endl;
+	result = calcByRosenbrock(Q4, G4, x0Barrier, r0, E, "Q4_2", false);
+	fout2 << result.iterationsCount << " " << result.fCalcCount << endl;
+	result = calcByRosenbrock(Q5, G5, x0Barrier, r0, E, "Q5_2", false);
+	fout2 << result.iterationsCount << " " << result.fCalcCount << endl;
+
+	// Визуализация
+	runVisualisation = "python plot.py "
+		+ to_string(x0Fine[0]) + " " + to_string(x0Fine[1]) + " "
+		+ to_string(x0Barrier[0]) + " " + to_string(x0Barrier[1]);
+	system(runVisualisation.c_str());
 	fout2.close();
-	fout3.close();
-	fout4.close();
-	fout5.close();
 }
+
 
 
 void main()
 {
+	researchConvergence();
 	researchE();
 	researchRFirst();
 	researchRMult();
-	singleTest();
-
-
+	researchXFirst();
 }
