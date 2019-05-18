@@ -102,7 +102,9 @@ margin=2cm
 
 
 \newcommand{\inputTableE}[1]{
-\noindent\begin{center}\pgfplotstabletypeset[
+\begin{center}
+\noindent
+\pgfplotstabletypeset[
 	columns/E/.style={column name={$\varepsilon$},},
 	columns/iter/.style={column name={\scriptsize Итераций},},
 	columns/fCalc/.style={column name={\scriptsize Вычислений $f$},},
@@ -119,7 +121,9 @@ margin=2cm
 
 
 \newcommand{\inputTableRFirst}[1]{
-\noindent\begin{center}\pgfplotstabletypeset[
+\begin{center}
+\noindent
+\pgfplotstabletypeset[
 	columns/rFirst/.style={column name={$r_0$},},
 	columns/iter/.style={column name={\scriptsize Итераций},},
 	columns/fCalc/.style={column name={\scriptsize Вычислений f},},
@@ -136,7 +140,9 @@ margin=2cm
 
 
 \newcommand{\inputTableRMult}[1]{
-\noindent\begin{center}\pgfplotstabletypeset[
+\begin{center}
+\noindent
+\pgfplotstabletypeset[
 	columns/rMult/.style={column name={$rMult$},},
 	columns/iter/.style={column name={\scriptsize Итераций},},
 	columns/fCalc/.style={column name={\scriptsize Вычислений $f$},},
@@ -223,24 +229,16 @@ $ G_j[g_j({\bar x})] = {-ln \Bigl[{-g_j({\bar x})} \Bigr] } $ }
 % Размер изображений [0, 1]
 \newcommand{\picSize}{0.7}
 
-\setlength{\abovedisplayskip}{0.5pt}
-\setlength{\belowdisplayskip}{0.5pt}
+\setlength{\abovedisplayskip}{-1pt}
+\setlength{\belowdisplayskip}{-1pt}
 
 
 
 \newcommand{\inputTwoImages}[2]{
-\begin{figure}[!htb]
-    \vspace{-2ex}
-    \begin{minipage}{0.49\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{#1}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.49\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{#2}
-    \end{minipage}
-    \hspace{-2ex}
+\begin{figure}[htbp!]
+    \noindent
+        \includegraphics[width=0.48\textwidth]{#1}
+        \includegraphics[width=0.48\textwidth]{#2}
 \end{figure}
 
 }
@@ -313,59 +311,29 @@ $ G_j[g_j({\bar x})] = {-ln \Bigl[{-g_j({\bar x})} \Bigr] } $ }
 
 %-------------------------------------------------------------------------------%-------------------------------------------------------------------------------
 %-------------------------------------------------------------------------------
-\section{Исследование сходимости метода штрафных функций}
-\funcGOne{}
-\includegraphics[width=\picSize\linewidth]{../pics/Rosenbrock_Q1.png}
-\funcGTwo{}
-\includegraphics[width=\picSize\linewidth]{../pics/Rosenbrock_Q2.png}
-\funcGThree{}
-\includegraphics[width=\picSize\linewidth]{../pics/Rosenbrock_Q3.png}
-
-%-------------------------------------------------------------------------------
-\subsection{Вывод}
-
-Повышение степени ${ \alpha }$ в штрафной функции ведёт к повышению числа итераций и вычислений целевой функции.
-
-
-
-
-%-------------------------------------------------------------------------------%-------------------------------------------------------------------------------
-%-------------------------------------------------------------------------------
-\section{Исследование сходимости метода барьерных функций}
-
-\funcGFour{}
-\includegraphics[width=\picSize\linewidth]{../pics/Rosenbrock_Q4.png}
-\funcGFive{}
-\includegraphics[width=\picSize\linewidth]{../pics/Rosenbrock_Q5.png}
-
-%-------------------------------------------------------------------------------
-\subsection{Вывод}
-
-Первая барьерная функция \funcInTextGFour{} находит неоптимальное решение, но всего за 1 итерацию.
-
-Вторая барьерная функия \funcInTextGFive{} находит глобальный минимум за несколько десятков итераций.
-
-
-
-
-%-------------------------------------------------------------------------------%-------------------------------------------------------------------------------
-%-------------------------------------------------------------------------------
 \section{Зависимость скорости сходимости метода от заданной точности}
-
+%-------------------------------------------------------------------------------
+\subsection{Штрафные функции}
 \funcGOne{}
 \inputTableE{tableE1.txt}
 \funcGTwo{}
 \inputTableE{tableE2.txt}
 \funcGThree{}
 \inputTableE{tableE3.txt}
+\includegraphics[width=\picSize\linewidth]{../pics/tableEFines.png}
+%-------------------------------------------------------------------------------
+\subsection{Барьерные функции}
 \funcGFour{}
 \inputTableE{tableE4.txt}
 \funcGFive{}
 \inputTableE{tableE5.txt}
+\includegraphics[width=\picSize\linewidth]{../pics/tableEBarriers.png}
 %-------------------------------------------------------------------------------
 \subsection{Вывод}
 
-Повышение точности ведёт как к повышению точности решения, так и росту количества вычислений целевой функции.
+При значении малом значении $\alpha $ (0 и 1) заданная точность не оказывает влияние на скорость сходимости метода штрафных функций.
+
+Для метода  барьерных функций рост точности ведёт к увеличению числа итераций и вычислений целевой функции.
 
 
 
@@ -373,21 +341,28 @@ $ G_j[g_j({\bar x})] = {-ln \Bigl[{-g_j({\bar x})} \Bigr] } $ }
 %-------------------------------------------------------------------------------%-------------------------------------------------------------------------------
 %-------------------------------------------------------------------------------
 \section{Зависимость скорости сходимости метода от  коэффициента изменения штрафа}
-
+%-------------------------------------------------------------------------------
+\subsection{Штрафные функции}
 \funcGOne{}
 \inputTableRMult{tableRMult1.txt}
 \funcGTwo{}
 \inputTableRMult{tableRMult2.txt}
 \funcGThree{}
 \inputTableRMult{tableRMult3.txt}
+\includegraphics[width=\picSize\linewidth]{../pics/tableRMultFines.png}
+%-------------------------------------------------------------------------------
+\subsection{Барьерные функции}
 \funcGFour{}
 \inputTableRMult{tableRMult4.txt}
 \funcGFive{}
 \inputTableRMult{tableRMult5.txt}
+\includegraphics[width=\picSize\linewidth]{../pics/tableRMultBarriers.png}
 %-------------------------------------------------------------------------------
 \subsection{Вывод}
+Рост коэффициента изменения штрафа ведёт к уменьшению числа итераций и вычислений целевой функции.
 
-Рост коэффициента изменения штрафа ведёт к уменьшению числа итераций и вычислений целевой функции
+Оптимальным значением коэффициента штрафа является 4.
+
 
 
 
@@ -395,21 +370,31 @@ $ G_j[g_j({\bar x})] = {-ln \Bigl[{-g_j({\bar x})} \Bigr] } $ }
 %-------------------------------------------------------------------------------
 %-------------------------------------------------------------------------------
 \section{Зависимость скорости сходимости метода от начального значения штрафа}
-
+%-------------------------------------------------------------------------------
+\subsection{Штрафные функции}
 \funcGOne{}
 \inputTableRFirst{tableRFirst1.txt}
 \funcGTwo{}
 \inputTableRFirst{tableRFirst2.txt}
 \funcGThree{}
 \inputTableRFirst{tableRFirst3.txt}
+\includegraphics[width=\picSize\linewidth]{../pics/tableRFirstFines.png}
+%-------------------------------------------------------------------------------
+\subsection{Барьерные функции}
 \funcGFour{}
 \inputTableRFirst{tableRFirst4.txt}
 \funcGFive{}
 \inputTableRFirst{tableRFirst5.txt}
+\includegraphics[width=\picSize\linewidth]{../pics/tableRFirstBarriers.png}
 %-------------------------------------------------------------------------------
 \subsection{Вывод}
 
-Для метода барьеров рост начального значения штрафа ведёт к тому, что метод в первую очередь стремится не найти локальный минимум, а в первую очередь стремится отойти как можно дальше от штрафной области.
+Для решения методом штрафной функции оптимальным методом является выбор первой функции с начальным значением штрафа равным 4.
+
+Для решения методом барьерной функции оптимален выбор штрафной функции с параметром
+
+Для метода барьеров рост начального значения штрафа ведёт к тому, что метод в первую очередь стремится не найти локальный минимум, а стремится отойти как можно дальше от штрафной области.
+
 
 
 
@@ -424,27 +409,17 @@ $ G_j[g_j({\bar x})] = {-ln \Bigl[{-g_j({\bar x})} \Bigr] } $ }
 	\item $ r_0 = 10 $
 	\item $ rMult = 2 $
 	\item $ \alpha = 8 $
-	\item $ x_{0 \text{штраф.}} = (2.5, -2) $
-	\item $ x_{0 \text{бар.}} = (0, -2) $
 \end{trivlist}
 
- 
-
-\funcGOne{}
 \inputTwoImages{../pics/Rosenbrock_Q1_1.png}{../pics/Rosenbrock_Q1_2.png}
-\funcGTwo{}
 \inputTwoImages{../pics/Rosenbrock_Q2_1.png}{../pics/Rosenbrock_Q2_2.png}
-\funcGThree{}
 \inputTwoImages{../pics/Rosenbrock_Q3_1.png}{../pics/Rosenbrock_Q3_2.png}
-\funcGFour{}
 \inputTwoImages{../pics/Rosenbrock_Q4_1.png}{../pics/Rosenbrock_Q4_2.png}
-\funcGFive{}
 \inputTwoImages{../pics/Rosenbrock_Q5_1.png}{../pics/Rosenbrock_Q5_2.png}
-
 %-------------------------------------------------------------------------------
 \subsection{Вывод}
 
-Начальное приближение находящееся в области штрафа заставляет метод быстро покинуть его
+Начальное приближение слабо влияет на сходимость метода.
 
 
 

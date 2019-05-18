@@ -3,8 +3,9 @@ import numpy
 import sys
 import matplotlib.pyplot as plt
 import matplotlib.lines as lines
+import matplotlib.cm as cm
 
-DPI = 200
+DPI = 100
 
 xList = []
 yList = []
@@ -62,7 +63,7 @@ def drawFines():
 	x1 = numpy.linspace(-3, 3, 100)
 	y1 = -1 - x1
 	yBorder = 3
-	plt.fill_between(x1,y1,yBorder, color='grey')
+	plt.fill_between(x1,y1,yBorder, color='grey', alpha=0.4)
 	x2 = numpy.linspace(-3, 2, 100)
 	y2 = x2 + 1
 	plt.plot(x2, y2)
@@ -106,7 +107,7 @@ def drawPointsAtResearch(name, f):
 	plt.ylabel('Y', fontsize=10)
 	plt.tick_params(axis='both', labelsize=8)
 	for i in range(len(xList)):
-		plt.scatter(xList[i], yList[i], s=5)
+		plt.scatter(xList[i], yList[i], s=5, color='black')
 	plt.savefig(folder + name + '.png', dpi=DPI)
 	plt.clf()
 
@@ -114,44 +115,40 @@ def drawPointsAtResearch(name, f):
 
 if __name__ == '__main__':
 	# парсим начальное приближение
-	params = sys.argv[1:5]
+	params = sys.argv[1:6]
 	x0Fine = float(params[0])
 	y0Fine = float(params[1])
 	x0Barrier = float(params[2])
 	y0Barrier = float(params[3])
+	mode = int(params[4])
 	xExp = 1
 	yExp = 1
 
-	inputMethodResults('Rosenbrock_Q.txt')
-	drawMethodConvergence('Rosenbrock_Q1', f, 0, x0Fine, y0Fine, xExp, yExp)
-	drawMethodConvergence('Rosenbrock_Q2', f, 1, x0Fine, y0Fine, xExp, yExp)
-	drawMethodConvergence('Rosenbrock_Q3', f, 2, x0Fine, y0Fine, xExp, yExp)
-	drawMethodConvergence('Rosenbrock_Q4', f, 3, x0Barrier, y0Barrier, xExp, yExp)
-	drawMethodConvergence('Rosenbrock_Q5', f, 4, x0Barrier, y0Barrier, xExp, yExp)
-	
-	
-	inputMethodResults('Rosenbrock_Q_1.txt')
-	drawMethodConvergence('Rosenbrock_Q1_1', f, 0, x0Fine, y0Fine, xExp, yExp)
-	drawMethodConvergence('Rosenbrock_Q2_1', f, 1, x0Fine, y0Fine, xExp, yExp)
-	drawMethodConvergence('Rosenbrock_Q3_1', f, 2, x0Fine, y0Fine, xExp, yExp)
-	drawMethodConvergence('Rosenbrock_Q4_1', f, 3, x0Barrier, y0Barrier, xExp, yExp)
-	drawMethodConvergence('Rosenbrock_Q5_1', f, 4, x0Barrier, y0Barrier, xExp, yExp)
-	
 
-	inputMethodResults('Rosenbrock_Q_2.txt')
-	drawMethodConvergence('Rosenbrock_Q1_2', f, 0, x0Fine, y0Fine, xExp, yExp)
-	drawMethodConvergence('Rosenbrock_Q2_2', f, 1, x0Fine, y0Fine, xExp, yExp)
-	drawMethodConvergence('Rosenbrock_Q3_2', f, 2, x0Fine, y0Fine, xExp, yExp)
-	drawMethodConvergence('Rosenbrock_Q4_2', f, 3, x0Barrier, y0Barrier, xExp, yExp)
-	drawMethodConvergence('Rosenbrock_Q5_2', f, 4, x0Barrier, y0Barrier, xExp, yExp)
+	if mode == 1:
+		drawPointsAtResearch('tableEFines', f)
+		drawPointsAtResearch('tableEBarriers', f)
 	
-
-
-	drawPointsAtResearch('tableEFines', f)
-	drawPointsAtResearch('tableEBarriers', f)
+	if mode == 2:
+		drawPointsAtResearch('tableRMultFines', f)
+		drawPointsAtResearch('tableRMultBarriers', f)
 	
-	drawPointsAtResearch('tableRMultFines', f)
-	drawPointsAtResearch('tableRMultBarriers', f)
+	if mode == 3:
+		drawPointsAtResearch('tableRFirstFines', f)
+		drawPointsAtResearch('tableRFirstBarriers', f)
 
-	drawPointsAtResearch('tableRFirstFines', f)
-	drawPointsAtResearch('tableRFirstBarriers', f)
+	if mode == 4:
+		inputMethodResults('Rosenbrock_Q_1.txt')
+		drawMethodConvergence('Rosenbrock_Q1_1', f, 0, x0Fine, y0Fine, xExp, yExp)
+		drawMethodConvergence('Rosenbrock_Q2_1', f, 1, x0Fine, y0Fine, xExp, yExp)
+		drawMethodConvergence('Rosenbrock_Q3_1', f, 2, x0Fine, y0Fine, xExp, yExp)
+		drawMethodConvergence('Rosenbrock_Q4_1', f, 3, x0Barrier, y0Barrier, xExp, yExp)
+		drawMethodConvergence('Rosenbrock_Q5_1', f, 4, x0Barrier, y0Barrier, xExp, yExp)
+
+	if mode == 5:
+		inputMethodResults('Rosenbrock_Q_2.txt')
+		drawMethodConvergence('Rosenbrock_Q1_2', f, 0, x0Fine, y0Fine, xExp, yExp)
+		drawMethodConvergence('Rosenbrock_Q2_2', f, 1, x0Fine, y0Fine, xExp, yExp)
+		drawMethodConvergence('Rosenbrock_Q3_2', f, 2, x0Fine, y0Fine, xExp, yExp)
+		drawMethodConvergence('Rosenbrock_Q4_2', f, 3, x0Barrier, y0Barrier, xExp, yExp)
+		drawMethodConvergence('Rosenbrock_Q5_2', f, 4, x0Barrier, y0Barrier, xExp, yExp)

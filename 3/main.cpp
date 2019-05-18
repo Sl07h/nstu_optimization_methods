@@ -62,47 +62,55 @@ inline real f(const vector1D &x) {
 
 
 
-// Ограничение области
-inline real g(const vector1D &x) {
+// Ограничение области б
+inline real gFine(const vector1D &x) {
+	// y = x + 1
+	gCalcCount++;
+	return  fabs(x[1] - x[0] - 1) /*+ fabs(x[0] + x[1] + 1)*/;
+}
+
+// Ограничение области а
+inline real gBarrier(const vector1D &x) {
+	// x + y <= -1
 	gCalcCount++;
 	return x[0] + x[1] + 1;
 }
 
 
 
+
 //------------------------------------------------------------------------------
 // Штрафная функция G
 inline real G1(const vector1D &x) {
-	if (g(x) > 0)
-		return 0.5*(g(x) + fabs(g(x)));
+	if (gFine(x) > 0)
+		return 0.5*(gFine(x) + fabs(gFine(x)));
 	else
 		return 0;
 }
 inline real G2(const vector1D &x) {
-	if (g(x) > 0)
-		return pow(0.5*(g(x) + fabs(g(x))), 2);
+	if (gFine(x) > 0)
+		return pow(0.5*(gFine(x) + fabs(gFine(x))), 2);
 	else
 		return 0;
 }
 inline real G3(const vector1D &x) {
-	if (g(x) > 0)
-		return pow(0.5*(g(x) + fabs(g(x))), alpha);
+	if (gFine(x) > 0)
+		return pow(0.5*(gFine(x) + fabs(gFine(x))), alpha);
 	else
 		return 0;
 }
 inline real G4(const vector1D &x) {
-	if (g(x) <= 0)
-		return -log(-g(x));
+	if (gBarrier(x) <= 0)
+		return -1.0 / gBarrier(x);
 	else
-		return DBL_MAX;
+		return std::numeric_limits<double>::infinity();
 }
 inline real G5(const vector1D &x) {
-	if (g(x) <= 0)
-		return -1.0 / g(x);
+	if (gBarrier(x) <= 0)
+		return -log(-gBarrier(x));
 	else
-		return DBL_MAX;
+		return std::numeric_limits<double>::infinity();
 }
-
 
 
 //------------------------------------------------------------------------------
@@ -230,8 +238,8 @@ real fibonacci(const function<real(const vector1D &x)> &f, vector1D &x, vector1D
 // x0 - начальное приближение
 // E - точность
 // funcname - название функции
-methodResult calcByRosenbrock(const function<real(const vector1D &x)> &f, const function<real(const vector1D &x)> &G, const vector1D &x0, real r0, real E, const string &funcname, bool isFineNotBarier) {
-		
+methodResult calcByRosenbrock(const function<real(const vector1D &x)> &fExact, const function<real(const vector1D &x)> &f, const function<real(const vector1D &x)> &G, const vector1D &x0, real r0, real E, const string &funcname, bool isFineNotBarier) {
+
 	ofstream fout("report/tableRosenbrock_" + funcname + ".txt");
 	ofstream steps("steps/Rosenbrock_" + funcname + ".txt");
 	fout << scientific;
@@ -286,7 +294,7 @@ methodResult calcByRosenbrock(const function<real(const vector1D &x)> &f, const 
 			<< fCalcCount << "\t"
 			<< r << "\t"
 			<< x << "\t"
-			<< f(x) << endl;
+			<< fExact(x) << endl;
 
 		steps << x << endl;
 
@@ -305,7 +313,7 @@ methodResult calcByRosenbrock(const function<real(const vector1D &x)> &f, const 
 	result.fCalcCount = fCalcCount;
 	result.x0 = x0;
 	result.x = x;
-	result.fx = f(x);
+	result.fx = fExact(x);
 	result.r0 = r0;
 
 	return result;
@@ -320,37 +328,6 @@ methodResult calcByRosenbrock(const function<real(const vector1D &x)> &f, const 
 //------------------------------------------------------------------------------
 
 
-// Исследование сходимости
-void researchConvergence()
-{
-	cout << "Research of convergence" << endl;
-	ofstream fout("steps/Rosenbrock_Q.txt");
-	real E = 1e-12;
-	real r0 = 10;
-	rMult = 2;
-	alpha = 12;
-	methodResult result;
-	vector1D x0Fine = { -2, 0 };
-	vector1D x0Barrier = { 0, -2 };
-	fout << scientific;
-	result = calcByRosenbrock(Q1, G1, x0Fine, r0, E, "Q1", true);
-	fout << result.iterationsCount << " " << result.fCalcCount << endl;
-	result = calcByRosenbrock(Q2, G2, x0Fine, r0, E, "Q2", true);
-	fout << result.iterationsCount << " " << result.fCalcCount << endl;
-	result = calcByRosenbrock(Q3, G3, x0Fine, r0, E, "Q3", true);
-	fout << result.iterationsCount << " " << result.fCalcCount << endl;
-	result = calcByRosenbrock(Q4, G4, x0Barrier, r0, E, "Q4", false);
-	fout << result.iterationsCount << " " << result.fCalcCount << endl;
-	result = calcByRosenbrock(Q5, G5, x0Barrier, r0, E, "Q5", false);
-	fout << result.iterationsCount << " " << result.fCalcCount << endl;
-
-	// Визуализация
-	string runVisualisation = "python plot.py "
-		+ to_string(x0Fine[0]) + " " + to_string(x0Fine[1]) + " "
-		+ to_string(x0Barrier[0]) + " " + to_string(x0Barrier[1]);
-	system(runVisualisation.c_str());
-	fout.close();
-}
 
 
 // Зависимость скорости сходимости метода от заданной точности
@@ -374,25 +351,25 @@ void researchE()
 	real r0 = 10;
 	rMult = 2;
 	alpha = 8;
-	vector1D x0Fine = { -2, 0 };
+	vector1D x0Fine = { -2, -1 };
 	vector1D x0Barrier = { 0, -2 };
 
 	for (double E = 1e-3; E >= 1e-7; E /= 10)
 	{
-		result = calcByRosenbrock(Q1, G1, x0Fine, r0, E, "Q1", true);
+		result = calcByRosenbrock(f, Q1, G1, x0Fine, r0, E, "Q1", true);
 		result.printResultE(fout1);
 		foutF << result.x << endl;
-		result = calcByRosenbrock(Q2, G2, x0Fine, r0, E, "Q2", true);
+		result = calcByRosenbrock(f, Q2, G2, x0Fine, r0, E, "Q2", true);
 		result.printResultE(fout2);
 		foutF << result.x << endl;
-		result = calcByRosenbrock(Q3, G3, x0Fine, r0, E, "Q3", true);
+		result = calcByRosenbrock(f, Q3, G3, x0Fine, r0, E, "Q3", true);
 		result.printResultE(fout3);
 		foutF << result.x << endl;
 
-		result = calcByRosenbrock(Q4, G4, x0Barrier, r0, E, "Q4", false);
+		result = calcByRosenbrock(f, Q4, G4, x0Barrier, r0, E, "Q4", false);
 		result.printResultE(fout4);
 		foutB << result.x << endl;
-		result = calcByRosenbrock(Q5, G5, x0Barrier, r0, E, "Q5", false);
+		result = calcByRosenbrock(f, Q5, G5, x0Barrier, r0, E, "Q5", false);
 		result.printResultE(fout5);
 		foutB << result.x << endl;
 	}
@@ -400,7 +377,7 @@ void researchE()
 	// Визуализация
 	string runVisualisation = "python plot.py "
 		+ to_string(x0Fine[0]) + " " + to_string(x0Fine[1]) + " "
-		+ to_string(x0Barrier[0]) + " " + to_string(x0Barrier[1]);
+		+ to_string(x0Barrier[0]) + " " + to_string(x0Barrier[1]) + " " + to_string(1);
 	system(runVisualisation.c_str());
 
 	foutF.close();
@@ -435,26 +412,26 @@ void researchRMult()
 	real E = 1e-12;
 	real r0 = 10;
 	alpha = 8;
-	vector1D x0Fine = { -2, 0 };
+	vector1D x0Fine = { -2, -1 };
 	vector1D x0Barrier = { 0, -2 };
-
-	for (size_t i = 2; i <= 10; i++)
+	for (size_t i = 2; i <= 10; i += 2)
 	{
 		rMult = i;
-		result = calcByRosenbrock(Q1, G1, x0Fine, r0, E, "Q1", true);
+		result = calcByRosenbrock(f, Q1, G1, x0Fine, r0, E, "Q1", true);
 		result.printResultR(fout1);
 		foutF << result.x << endl;
-		result = calcByRosenbrock(Q2, G2, x0Fine, r0, E, "Q2", true);
+		result = calcByRosenbrock(f, Q2, G2, x0Fine, r0, E, "Q2", true);
 		result.printResultR(fout2);
 		foutF << result.x << endl;
-		result = calcByRosenbrock(Q3, G3, x0Fine, r0, E, "Q3", true);
+		result = calcByRosenbrock(f, Q3, G3, x0Fine, r0, E, "Q3", true);
 		result.printResultR(fout3);
 		foutF << result.x << endl;
 
-		result = calcByRosenbrock(Q4, G4, x0Barrier, r0, E, "Q4", false);
+
+		result = calcByRosenbrock(f, Q4, G4, x0Barrier, r0, E, "Q4", false);
 		result.printResultR(fout4);
 		foutB << result.x << endl;
-		result = calcByRosenbrock(Q5, G5, x0Barrier, r0, E, "Q5", false);
+		result = calcByRosenbrock(f, Q5, G5, x0Barrier, r0, E, "Q5", false);
 		result.printResultR(fout5);
 		foutB << result.x << endl;
 	}
@@ -462,7 +439,7 @@ void researchRMult()
 	// Визуализация
 	string runVisualisation = "python plot.py "
 		+ to_string(x0Fine[0]) + " " + to_string(x0Fine[1]) + " "
-		+ to_string(x0Barrier[0]) + " " + to_string(x0Barrier[1]);
+		+ to_string(x0Barrier[0]) + " " + to_string(x0Barrier[1]) + " " + to_string(2);
 	system(runVisualisation.c_str());
 
 	foutF.close();
@@ -497,33 +474,34 @@ void researchRFirst()
 	real E = 1e-12;
 	rMult = 2;
 	alpha = 8;
-	vector1D x0Fine = { -2, 0 };
+	vector1D x0Fine = { -2, -1 };
 	vector1D x0Barrier = { 0, -2 };
 
-	for (real r0 = 2; r0 <= 64; r0 *= 2)
+	for (real r0 = 1; r0 <= 64; r0 *= 4)
 	{
-		result = calcByRosenbrock(Q1, G1, x0Fine, r0, E, "Q1", true);
+		result = calcByRosenbrock(f, Q1, G1, x0Fine, r0, E, "Q1", true);
 		result.printResultRFirst(fout1);
 		foutF << result.x << endl;
-		result = calcByRosenbrock(Q2, G2, x0Fine, r0, E, "Q2", true);
+		result = calcByRosenbrock(f, Q2, G2, x0Fine, r0, E, "Q2", true);
 		result.printResultRFirst(fout2);
 		foutF << result.x << endl;
-		result = calcByRosenbrock(Q3, G3, x0Fine, r0, E, "Q3", true);
+		result = calcByRosenbrock(f, Q3, G3, x0Fine, r0, E, "Q3", true);
 		result.printResultRFirst(fout3);
 		foutF << result.x << endl;
 
-		result = calcByRosenbrock(Q4, G4, x0Barrier, r0, E, "Q4", false);
+		result = calcByRosenbrock(f, Q4, G4, x0Barrier, r0, E, "Q4", false);
 		result.printResultRFirst(fout4);
 		foutB << result.x << endl;
-		result = calcByRosenbrock(Q5, G5, x0Barrier, r0, E, "Q5", false);
+		result = calcByRosenbrock(f, Q5, G5, x0Barrier, r0, E, "Q5", false);
 		result.printResultRFirst(fout5);
 		foutB << result.x << endl;
 	}
 
+
 	// Визуализация
 	string runVisualisation = "python plot.py "
 		+ to_string(x0Fine[0]) + " " + to_string(x0Fine[1]) + " "
-		+ to_string(x0Barrier[0]) + " " + to_string(x0Barrier[1]);
+		+ to_string(x0Barrier[0]) + " " + to_string(x0Barrier[1]) + " " + to_string(3);
 	system(runVisualisation.c_str());
 
 	foutF.close();
@@ -546,47 +524,46 @@ void researchXFirst()
 	real r0 = 10;
 	rMult = 2;
 	alpha = 8;
-	vector1D x0Fine = { 2, -2 };
+	vector1D x0Fine = { -2, -1 };
 	vector1D x0Barrier = { 0, -2 };
-	
+
 	ofstream fout1("steps/Rosenbrock_Q_1.txt");
-	result = calcByRosenbrock(Q1, G1, x0Fine, r0, E, "Q1_1", true);
+	result = calcByRosenbrock(f, Q1, G1, x0Fine, r0, E, "Q1_1", true);
 	fout1 << result.iterationsCount << " " << result.fCalcCount << endl;
-	result = calcByRosenbrock(Q2, G2, x0Fine, r0, E, "Q2_1", true);
+	result = calcByRosenbrock(f, Q2, G2, x0Fine, r0, E, "Q2_1", true);
 	fout1 << result.iterationsCount << " " << result.fCalcCount << endl;
-	result = calcByRosenbrock(Q3, G3, x0Fine, r0, E, "Q3_1", true);
+	result = calcByRosenbrock(f, Q3, G3, x0Fine, r0, E, "Q3_1", true);
 	fout1 << result.iterationsCount << " " << result.fCalcCount << endl;
-	result = calcByRosenbrock(Q4, G4, x0Barrier, r0, E, "Q4_1", false);
+	result = calcByRosenbrock(f, Q4, G4, x0Barrier, r0, E, "Q4_1", false);
 	fout1 << result.iterationsCount << " " << result.fCalcCount << endl;
-	result = calcByRosenbrock(Q5, G5, x0Barrier, r0, E, "Q5_1", false);
+	result = calcByRosenbrock(f, Q5, G5, x0Barrier, r0, E, "Q5_1", false);
 	fout1 << result.iterationsCount << " " << result.fCalcCount << endl;
 
 	// Визуализация
 	string runVisualisation = "python plot.py "
 		+ to_string(x0Fine[0]) + " " + to_string(x0Fine[1]) + " "
-		+ to_string(x0Barrier[0]) + " " + to_string(x0Barrier[1]);
+		+ to_string(x0Barrier[0]) + " " + to_string(x0Barrier[1]) + " " + to_string(4);
 	system(runVisualisation.c_str());
-	fout1.close();
 
 
 	ofstream fout2("steps/Rosenbrock_Q_2.txt");
-	x0Fine = { -2, -2 };
-	x0Barrier = { -2, -2 };
-	result = calcByRosenbrock(Q1, G1, x0Fine, r0, E, "Q1_2", true);
+	x0Fine = { 2, -1 };
+	x0Barrier = { 1, -3 };
+	result = calcByRosenbrock(f, Q1, G1, x0Fine, r0, E, "Q1_2", true);
 	fout2 << result.iterationsCount << " " << result.fCalcCount << endl;
-	result = calcByRosenbrock(Q2, G2, x0Fine, r0, E, "Q2_2", true);
+	result = calcByRosenbrock(f, Q2, G2, x0Fine, r0, E, "Q2_2", true);
 	fout2 << result.iterationsCount << " " << result.fCalcCount << endl;
-	result = calcByRosenbrock(Q3, G3, x0Fine, r0, E, "Q3_2", true);
+	result = calcByRosenbrock(f, Q3, G3, x0Fine, r0, E, "Q3_2", true);
 	fout2 << result.iterationsCount << " " << result.fCalcCount << endl;
-	result = calcByRosenbrock(Q4, G4, x0Barrier, r0, E, "Q4_2", false);
+	result = calcByRosenbrock(f, Q4, G4, x0Barrier, r0, E, "Q4_2", false);
 	fout2 << result.iterationsCount << " " << result.fCalcCount << endl;
-	result = calcByRosenbrock(Q5, G5, x0Barrier, r0, E, "Q5_2", false);
+	result = calcByRosenbrock(f, Q5, G5, x0Barrier, r0, E, "Q5_2", false);
 	fout2 << result.iterationsCount << " " << result.fCalcCount << endl;
 
 	// Визуализация
 	runVisualisation = "python plot.py "
 		+ to_string(x0Fine[0]) + " " + to_string(x0Fine[1]) + " "
-		+ to_string(x0Barrier[0]) + " " + to_string(x0Barrier[1]);
+		+ to_string(x0Barrier[0]) + " " + to_string(x0Barrier[1]) + " " + to_string(5);
 	system(runVisualisation.c_str());
 	fout2.close();
 }
@@ -595,9 +572,8 @@ void researchXFirst()
 
 void main()
 {
-	researchConvergence();
 	researchE();
-	researchRFirst();
 	researchRMult();
+	researchRFirst();
 	researchXFirst();
 }
