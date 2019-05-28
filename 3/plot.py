@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.lines as lines
 import matplotlib.cm as cm
 
-DPI = 100
+DPI = 120
 
 xList = []
 yList = []

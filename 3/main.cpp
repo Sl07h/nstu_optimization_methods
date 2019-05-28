@@ -414,7 +414,7 @@ void researchRMult()
 	alpha = 8;
 	vector1D x0Fine = { -2, -1 };
 	vector1D x0Barrier = { 0, -2 };
-	for (size_t i = 2; i <= 10; i += 2)
+	for (size_t i = 2; i <= 10; i += 1)
 	{
 		rMult = i;
 		result = calcByRosenbrock(f, Q1, G1, x0Fine, r0, E, "Q1", true);
@@ -477,7 +477,7 @@ void researchRFirst()
 	vector1D x0Fine = { -2, -1 };
 	vector1D x0Barrier = { 0, -2 };
 
-	for (real r0 = 1; r0 <= 64; r0 *= 4)
+	for (real r0 = 1; r0 <= 64; r0 *= 2)
 	{
 		result = calcByRosenbrock(f, Q1, G1, x0Fine, r0, E, "Q1", true);
 		result.printResultRFirst(fout1);
@@ -548,7 +548,7 @@ void researchXFirst()
 
 	ofstream fout2("steps/Rosenbrock_Q_2.txt");
 	x0Fine = { 2, -1 };
-	x0Barrier = { 1, -3 };
+	x0Barrier = { -2.5, 1 };
 	result = calcByRosenbrock(f, Q1, G1, x0Fine, r0, E, "Q1_2", true);
 	fout2 << result.iterationsCount << " " << result.fCalcCount << endl;
 	result = calcByRosenbrock(f, Q2, G2, x0Fine, r0, E, "Q2_2", true);
