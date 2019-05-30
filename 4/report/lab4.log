@@ -1,0 +1,1768 @@
+This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6730 64-bit) (preloaded format=xelatex 2018.11.21)  29 MAY 2019 17:04
+entering extended mode
+**./lab4.tex
+(lab4.tex
+LaTeX2e <2018-04-01> patch level 5
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2018/06/05 3.22 The Babel package
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\switch.def"
+File: switch.def 2018/06/05 3.22 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\babel-russian\russ
+ianb.ldf
+Language: russian 2017/08/12 1.3j Russian support for the Babel system
+ ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2018/06/05 3.22 Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\xebabel.def"
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\txtbabel.def"))
+\bbl@dirlevel=\count89
+)
+Package babel Info: Making " an active character on input line 120.
+Package babel Info: Default for \cyrdash is provided on input line 157.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.sty"
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\l3packages\xparse\
+xparse.sty
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\expl3.sty
+Package: expl3 2018-10-31 L3 programming layer (loader) 
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\expl3-cod
+e.tex
+Package: expl3 2018-10-31 L3 programming layer (code)
+\c_max_int=\count90
+\l_tmpa_int=\count91
+\l_tmpb_int=\count92
+\g_tmpa_int=\count93
+\g_tmpb_int=\count94
+\g__kernel_prg_map_int=\count95
+\c_log_iow=\count96
+\l_iow_line_count_int=\count97
+\l__iow_line_target_int=\count98
+\l__iow_one_indent_int=\count99
+\l__iow_indent_int=\count100
+\c_zero_dim=\dimen104
+\c_max_dim=\dimen105
+\l_tmpa_dim=\dimen106
+\l_tmpb_dim=\dimen107
+\g_tmpa_dim=\dimen108
+\g_tmpb_dim=\dimen109
+\c_zero_skip=\skip43
+\c_max_skip=\skip44
+\l_tmpa_skip=\skip45
+\l_tmpb_skip=\skip46
+\g_tmpa_skip=\skip47
+\g_tmpb_skip=\skip48
+\c_zero_muskip=\muskip10
+\c_max_muskip=\muskip11
+\l_tmpa_muskip=\muskip12
+\l_tmpb_muskip=\muskip13
+\g_tmpa_muskip=\muskip14
+\g_tmpb_muskip=\muskip15
+\l_keys_choice_int=\count101
+\l__intarray_loop_int=\count102
+\c__intarray_sp_dim=\dimen110
+\g__intarray_font_int=\count103
+\c__fp_leading_shift_int=\count104
+\c__fp_middle_shift_int=\count105
+\c__fp_trailing_shift_int=\count106
+\c__fp_big_leading_shift_int=\count107
+\c__fp_big_middle_shift_int=\count108
+\c__fp_big_trailing_shift_int=\count109
+\c__fp_Bigg_leading_shift_int=\count110
+\c__fp_Bigg_middle_shift_int=\count111
+\c__fp_Bigg_trailing_shift_int=\count112
+\g__fp_array_int=\count113
+\l__fp_array_loop_int=\count114
+\l__sort_length_int=\count115
+\l__sort_min_int=\count116
+\l__sort_top_int=\count117
+\l__sort_max_int=\count118
+\l__sort_true_max_int=\count119
+\l__sort_block_int=\count120
+\l__sort_begin_int=\count121
+\l__sort_end_int=\count122
+\l__sort_A_int=\count123
+\l__sort_B_int=\count124
+\l__sort_C_int=\count125
+\l__tl_analysis_normal_int=\count126
+\l__tl_analysis_index_int=\count127
+\l__tl_analysis_nesting_int=\count128
+\l__tl_analysis_type_int=\count129
+\l__regex_internal_a_int=\count130
+\l__regex_internal_b_int=\count131
+\l__regex_internal_c_int=\count132
+\l__regex_balance_int=\count133
+\l__regex_group_level_int=\count134
+\l__regex_mode_int=\count135
+\c__regex_cs_in_class_mode_int=\count136
+\c__regex_cs_mode_int=\count137
+\l__regex_catcodes_int=\count138
+\l__regex_default_catcodes_int=\count139
+\c__regex_catcode_L_int=\count140
+\c__regex_catcode_O_int=\count141
+\c__regex_catcode_A_int=\count142
+\c__regex_all_catcodes_int=\count143
+\l__regex_show_lines_int=\count144
+\l__regex_min_state_int=\count145
+\l__regex_max_state_int=\count146
+\l__regex_left_state_int=\count147
+\l__regex_right_state_int=\count148
+\l__regex_capturing_group_int=\count149
+\l__regex_min_pos_int=\count150
+\l__regex_max_pos_int=\count151
+\l__regex_curr_pos_int=\count152
+\l__regex_start_pos_int=\count153
+\l__regex_success_pos_int=\count154
+\l__regex_curr_char_int=\count155
+\l__regex_curr_catcode_int=\count156
+\l__regex_last_char_int=\count157
+\l__regex_case_changed_char_int=\count158
+\l__regex_curr_state_int=\count159
+\l__regex_step_int=\count160
+\l__regex_min_active_int=\count161
+\l__regex_max_active_int=\count162
+\l__regex_replacement_csnames_int=\count163
+\l__regex_match_count_int=\count164
+\l__regex_min_submatch_int=\count165
+\l__regex_submatch_int=\count166
+\l__regex_zeroth_submatch_int=\count167
+\g__regex_trace_regex_int=\count168
+\c_empty_box=\box26
+\l_tmpa_box=\box27
+\l_tmpb_box=\box28
+\g_tmpa_box=\box29
+\g_tmpb_box=\box30
+\l__box_top_dim=\dimen111
+\l__box_bottom_dim=\dimen112
+\l__box_left_dim=\dimen113
+\l__box_right_dim=\dimen114
+\l__box_top_new_dim=\dimen115
+\l__box_bottom_new_dim=\dimen116
+\l__box_left_new_dim=\dimen117
+\l__box_right_new_dim=\dimen118
+\l__box_internal_box=\box31
+\l__coffin_internal_box=\box32
+\l__coffin_internal_dim=\dimen119
+\l__coffin_offset_x_dim=\dimen120
+\l__coffin_offset_y_dim=\dimen121
+\l__coffin_x_dim=\dimen122
+\l__coffin_y_dim=\dimen123
+\l__coffin_x_prime_dim=\dimen124
+\l__coffin_y_prime_dim=\dimen125
+\c_empty_coffin=\box33
+\l__coffin_aligned_coffin=\box34
+\l__coffin_aligned_internal_coffin=\box35
+\l_tmpa_coffin=\box36
+\l_tmpb_coffin=\box37
+\l__coffin_display_coffin=\box38
+\l__coffin_display_coord_coffin=\box39
+\l__coffin_display_pole_coffin=\box40
+\l__coffin_display_offset_dim=\dimen126
+\l__coffin_display_x_dim=\dimen127
+\l__coffin_display_y_dim=\dimen128
+\g__file_internal_ior=\read1
+\l__coffin_bounding_shift_dim=\dimen129
+\l__coffin_left_corner_dim=\dimen130
+\l__coffin_right_corner_dim=\dimen131
+\l__coffin_bottom_corner_dim=\dimen132
+\l__coffin_top_corner_dim=\dimen133
+\l__coffin_scaled_total_height_dim=\dimen134
+\l__coffin_scaled_width_dim=\dimen135
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\l3xdvipdf
+mx.def
+File: l3xdvidpfmx.def 2018-10-31 v L3 Experimental driver: xdvipdfmx
+\g__driver_image_int=\count169
+\g__driver_pdf_object_int=\count170
+))
+Package: xparse 2018-10-17 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count171
+\g__xparse_grabber_int=\count172
+\l__xparse_m_args_int=\count173
+\l__xparse_mandatory_args_int=\count174
+\l__xparse_v_nesting_int=\count175
+)
+Package: fontspec 2017/11/09 v2.6g Font selection for XeLaTeX and LuaLaTeX
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec-xetex.sty"
+Package: fontspec-xetex 2017/11/09 v2.6g Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count176
+\l__fontspec_language_int=\count177
+\l__fontspec_strnum_int=\count178
+\l__fontspec_tmp_int=\count179
+\l__fontspec_em_int=\count180
+\l__fontspec_emdef_int=\count181
+\l__fontspec_strong_int=\count182
+\l__fontspec_strongdef_int=\count183
+\l__fontspec_tmpa_dim=\dimen136
+\l__fontspec_tmpb_dim=\dimen137
+\l__fontspec_tmpc_dim=\dimen138
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\tuenc.def"
+File: tuenc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TU on input line 82.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.cfg")
+LaTeX Info: Redefining \itshape on input line 3891.
+LaTeX Info: Redefining \slshape on input line 3896.
+LaTeX Info: Redefining \scshape on input line 3901.
+LaTeX Info: Redefining \upshape on input line 3906.
+LaTeX Info: Redefining \em on input line 3936.
+LaTeX Info: Redefining \emph on input line 3961.
+LaTeX Info: Redefining \- on input line 4015.
+))
+\g__fontspec_family_Calibri_int=\count184
+
+Package fontspec Info: Font family 'Calibri(0)' created for font 'Calibri'
+(fontspec)             with options [Ligatures=TeX].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"Calibri/OT:script=latn;language=DFLT;mapping=tex-tex
+t;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"Calibri/OT:script=latn;language=DFLT;+smcp;mapping=t
+ex-text;"
+(fontspec)             - 'bold' (bx/n) with NFSS spec.:
+(fontspec)             <->"Calibri/B/OT:script=latn;language=DFLT;mapping=tex-t
+ext;"
+(fontspec)             - 'bold small caps'  (bx/sc) with NFSS spec.:
+(fontspec)             <->"Calibri/B/OT:script=latn;language=DFLT;+smcp;mapping
+=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"Calibri/I/OT:script=latn;language=DFLT;mapping=tex-t
+ext;"
+(fontspec)             - 'italic small caps'  (m/itsc) with NFSS spec.:
+(fontspec)             <->"Calibri/I/OT:script=latn;language=DFLT;+smcp;mapping
+=tex-text;"
+(fontspec)             - 'bold italic' (bx/it) with NFSS spec.:
+(fontspec)             <->"Calibri/BI/OT:script=latn;language=DFLT;mapping=tex-
+text;"
+(fontspec)             - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
+(fontspec)             <->"Calibri/BI/OT:script=latn;language=DFLT;+smcp;mappin
+g=tex-text;"
+
+LaTeX Info: Redefining \sffamily on input line 5.
+\g__fontspec_family_Consolas_int=\count185
+
+Package fontspec Info: Font family 'Consolas(0)' created for font 'Consolas'
+(fontspec)             with options
+(fontspec)             [WordSpace={1,0,0},HyphenChar=None,PunctuationSpace=Word
+Space].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"Consolas/OT:script=latn;language=DFLT;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold' (bx/n) with NFSS spec.:
+(fontspec)             <->"Consolas/B/OT:script=latn;language=DFLT;"
+(fontspec)             - 'bold small caps'  (bx/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"Consolas/I/OT:script=latn;language=DFLT;"
+(fontspec)             - 'italic small caps'  (m/itsc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold italic' (bx/it) with NFSS spec.:
+(fontspec)             <->"Consolas/BI/OT:script=latn;language=DFLT;"
+(fontspec)             - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+
+LaTeX Info: Redefining \ttfamily on input line 6.
+\g__fontspec_family_cmunrm_int=\count186
+
+Package fontspec Info: Font family 'cmunrm(0)' created for font 'cmunrm' with
+(fontspec)             options
+(fontspec)             [Ligatures=TeX,Ligatures=TeX,Extension=.otf,BoldFont=cmu
+nbx,ItalicFont=cmunti,BoldItalicFont=cmunbi].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[cmunrm.otf]/OT:script=latn;language=DFLT;mapping=te
+x-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"[cmunrm.otf]/OT:script=latn;language=DFLT;+smcp;mapp
+ing=tex-text;"
+(fontspec)             - 'bold' (bx/n) with NFSS spec.:
+(fontspec)             <->"[cmunbx.otf]/OT:script=latn;language=DFLT;mapping=te
+x-text;"
+(fontspec)             - 'bold small caps'  (bx/sc) with NFSS spec.:
+(fontspec)             <->"[cmunbx.otf]/OT:script=latn;language=DFLT;+smcp;mapp
+ing=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[cmunti.otf]/OT:script=latn;language=DFLT;mapping=te
+x-text;"
+(fontspec)             - 'italic small caps'  (m/itsc) with NFSS spec.: 
+(fontspec)             - 'bold italic' (bx/it) with NFSS spec.:
+(fontspec)             <->"[cmunbi.otf]/OT:script=latn;language=DFLT;mapping=te
+x-text;"
+(fontspec)             - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+
+LaTeX Info: Redefining \rmfamily on input line 13.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\polyglossia.sty"
+Package: polyglossia 2018/04/07 v1.43 Alternative to Babel for XeLaTeX and LuaL
+aTeX
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\etoolbox\etoolbox.
+sty
+Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count187
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\makecmds\makecmds.
+sty
+Package: makecmds 2009/09/03 v1.0a extra command making commands
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex"
+\XKV@toks=\toks14
+\XKV@tempa@toks=\toks15
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\keyval.tex"))
+\XKV@depth=\count188
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\xpg@normalclass=\XeTeXcharclass1
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-russian.ldf"
+File: gloss-russian.ldf polyglossia: module for russian
+)
+Package polyglossia Info: Default language is russian.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-english.ldf"
+File: gloss-english.ldf polyglossia: module for english
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2018/04/16 v5.8 Page Geometry
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+\Gm@cnth=\count189
+\Gm@cntv=\count190
+\c@Gm@tempcnt=\count191
+\Gm@bindingoffset=\dimen139
+\Gm@wd@mp=\dimen140
+\Gm@odd@mp=\dimen141
+\Gm@even@mp=\dimen142
+\Gm@layoutwidth=\dimen143
+\Gm@layoutheight=\dimen144
+\Gm@layouthoffset=\dimen145
+\Gm@layoutvoffset=\dimen146
+\Gm@dimlist=\toks16
+
+("C:\Program Files\MiKTeX 2.9\tex\xelatex\xetexconfig\geometry.cfg"))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\pgfplots\pgfplotst
+able.sty
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplot
+s.revision.tex)
+Package: pgfplotstable 2018/03/28 v1.16 Table typesetting and Pretty-printing (
+1.16)
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\pgfplots\pgfplots.
+sty
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplot
+s.revision.tex)
+Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 99.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\xetex.def"
+File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen147
+\Gin@req@width=\dimen148
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\frontendlayer\
+tikz.sty
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgf
+.sty
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfr
+cs.sty
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pg
+futil-common.tex
+\pgfutil@everybye=\toks17
+\pgfutil@tempdima=\dimen149
+\pgfutil@tempdimb=\dimen150
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pg
+futil-common-lists.tex))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pg
+futil-latex.def
+\pgfutil@abb=\box41
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\ms\everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pg
+frcs.code.tex
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgf
+core.sty
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\systemlayer\pg
+fsys.sty
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\
+pgfsys.code.tex
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pg
+fkeys.code.tex
+\pgfkeys@pathtoks=\toks18
+\pgfkeys@temptoks=\toks19
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pg
+fkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks20
+))
+\pgf@x=\dimen151
+\pgf@y=\dimen152
+\pgf@xa=\dimen153
+\pgf@ya=\dimen154
+\pgf@xb=\dimen155
+\pgf@yb=\dimen156
+\pgf@xc=\dimen157
+\pgf@yc=\dimen158
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count192
+\c@pgf@countb=\count193
+\c@pgf@countc=\count194
+\c@pgf@countd=\count195
+\t@pgf@toka=\toks21
+\t@pgf@tokb=\toks22
+\t@pgf@tokc=\toks23
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\
+pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-xetex.def
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\
+pgfsys-xetex.def
+File: pgfsys-xetex.def 2014/07/09  (rcs-revision 1.11)
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\
+pgfsys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2014/07/09  (rcs-revision 1.14)
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\
+pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)
+\pgfsys@objnum=\count196
+)))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\
+pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count197
+\pgfsyssoftpath@bigbuffer@items=\count198
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\
+pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\p
+gfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath
+.code.tex
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath
+calc.code.tex
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath
+util.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath
+parser.code.tex
+\pgfmath@dimen=\dimen159
+\pgfmath@count=\count199
+\pgfmath@box=\box42
+\pgfmath@toks=\toks24
+\pgfmath@stack@operand=\toks25
+\pgfmath@stack@operation=\toks26
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath
+functions.code.tex
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath
+functions.basic.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath
+functions.trigonometric.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath
+functions.random.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath
+functions.comparison.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath
+functions.base.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath
+functions.round.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath
+functions.misc.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath
+functions.integerarithmetics.code.tex)))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath
+float.code.tex
+\c@pgfmathroundto@lastzeros=\count266
+))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\p
+gfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen160
+\pgf@picmaxx=\dimen161
+\pgf@picminy=\dimen162
+\pgf@picmaxy=\dimen163
+\pgf@pathminx=\dimen164
+\pgf@pathmaxx=\dimen165
+\pgf@pathminy=\dimen166
+\pgf@pathmaxy=\dimen167
+\pgf@xx=\dimen168
+\pgf@xy=\dimen169
+\pgf@yx=\dimen170
+\pgf@yy=\dimen171
+\pgf@zx=\dimen172
+\pgf@zy=\dimen173
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\p
+gfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen174
+\pgf@path@lasty=\dimen175
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\p
+gfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen176
+\pgf@shorten@start@additional=\dimen177
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\p
+gfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box43
+\pgf@hbox=\box44
+\pgf@layerbox@main=\box45
+\pgf@picture@serial@count=\count267
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\p
+gfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen178
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\p
+gfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen179
+\pgf@pt@y=\dimen180
+\pgf@pt@temp=\dimen181
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\p
+gfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\p
+gfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\p
+gfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\p
+gfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen182
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\p
+gfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen183
+\pgf@sys@shading@range@num=\count268
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\p
+gfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\p
+gfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box46
+))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\p
+gfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\p
+gfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\p
+gfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfm
+oduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box47
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfm
+oduleplot.code.tex
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\
+pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen184
+\pgf@nodesepend=\dimen185
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\
+pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgff
+or.sty
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfk
+eys.sty
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pg
+fkeys.code.tex))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\math\pgfmath.s
+ty
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath
+.code.tex))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pg
+ffor.code.tex
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath
+.code.tex)
+\pgffor@iter=\dimen186
+\pgffor@skip=\dimen187
+\pgffor@stack=\toks27
+\pgffor@toks=\toks28
+))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlaye
+r\tikz\tikz.code.tex
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pg
+flibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count269
+\pgfplotmarksize=\dimen188
+)
+\tikz@lastx=\dimen189
+\tikz@lasty=\dimen190
+\tikz@lastxsaved=\dimen191
+\tikz@lastysaved=\dimen192
+\tikzleveldistance=\dimen193
+\tikzsiblingdistance=\dimen194
+\tikz@figbox=\box48
+\tikz@figbox@bg=\box49
+\tikz@tempbox=\box50
+\tikz@tempbox@bg=\box51
+\tikztreelevel=\count270
+\tikznumberofchildren=\count271
+\tikznumberofcurrentchild=\count272
+\tikz@fig@count=\count273
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfm
+odulematrix.code.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count274
+\pgfmatrixcurrentcolumn=\count275
+\pgf@matrix@numberofcolumns=\count276
+)
+\tikz@expandcount=\count277
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlaye
+r\tikz\libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+)))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplot
+s.code.tex
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplot
+score.code.tex
+\t@pgfplots@toka=\toks29
+\t@pgfplots@tokb=\toks30
+\t@pgfplots@tokc=\toks31
+\pgfplots@tmpa=\dimen195
+\c@pgfplots@coordindex=\count278
+\c@pgfplots@scanlineindex=\count279
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\sys\pgf
+plotssysgeneric.code.tex))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\libs\pg
+fplotslibrary.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfc
+ompatib\pgfplotsoldpgfsupp_loader.code.tex
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pg
+flibraryfpu.code.tex)
+Package pgfplots: loading complementary arithmetics for your pgf version...
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfc
+ompatib\pgfplotsoldpgfsupp_pgflibraryfpu.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfc
+ompatib\pgfplotsoldpgfsupp_pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count280
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfc
+ompatib\pgfplotsoldpgfsupp_leq.code.tex))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pg
+fplotsutil.code.tex
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststr
+ucture\pgfplotsliststructure.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststr
+ucture\pgfplotsliststructureext.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststr
+ucture\pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count281
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststr
+ucture\pgfplotsmatrix.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\numtabl
+e\pgfplotstableshared.code.tex
+\c@pgfplotstable@counta=\count282
+\t@pgfplotstable@a=\toks32
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststr
+ucture\pgfplotsdeque.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pg
+fplotsbinary.code.tex
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pg
+fplotsbinary.data.code.tex))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pg
+fplotsutil.verb.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\libs\pg
+flibrarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count283
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\sys\pgf
+librarypgfplots.surfshading.pgfsys-xetex.def
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\sys\pgf
+librarypgfplots.surfshading.pgfsys-dvipdfmx.def
+\c@pgfplotslibrarysurf@streamlen=\count284
+))))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pg
+fplotscolormap.code.tex
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pg
+fplotscolor.code.tex))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplot
+sstackedplots.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplot
+splothandlers.code.tex
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplot
+smeshplothandler.code.tex
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplot
+smeshplotimage.code.tex)))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplot
+s.scaling.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplot
+scoordprocessing.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplot
+s.errorbars.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplot
+s.markers.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplot
+sticks.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplot
+s.paths.code.tex)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlaye
+r\tikz\libraries\tikzlibrarydecorations.code.tex
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfm
+oduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen196
+\pgfdecoratedremainingdistance=\dimen197
+\pgfdecoratedinputsegmentcompleteddistance=\dimen198
+\pgfdecoratedinputsegmentremainingdistance=\dimen199
+\pgf@decorate@distancetomove=\dimen256
+\pgf@decorate@repeatstate=\count285
+\pgfdecorationsegmentamplitude=\dimen257
+\pgfdecorationsegmentlength=\dimen258
+)
+\tikz@lib@dec@box=\box52
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlaye
+r\tikz\libraries\tikzlibrarydecorations.pathmorphing.code.tex
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\de
+corations\pgflibrarydecorations.pathmorphing.code.tex))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlaye
+r\tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\de
+corations\pgflibrarydecorations.pathreplacing.code.tex))
+\pgfplots@numplots=\count286
+\pgfplots@xmin@reg=\dimen259
+\pgfplots@xmax@reg=\dimen260
+\pgfplots@ymin@reg=\dimen261
+\pgfplots@ymax@reg=\dimen262
+\pgfplots@zmin@reg=\dimen263
+\pgfplots@zmax@reg=\dimen264
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlaye
+r\tikz\libraries\tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pg
+flibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
+)))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\numtabl
+e\pgfplotstable.code.tex
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\numtabl
+e\pgfplotstable.coltype.code.tex))
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2018/04/30 v2.4h Tabular extension package (FMi)
+\col@sep=\dimen265
+\ar@mcellbox=\box53
+\extrarowheight=\dimen266
+\NC@list=\toks33
+\extratabsurround=\skip49
+\backup@length=\skip50
+\ar@cellbox=\box54
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\arydshln\arydshln.
+sty
+Package: arydshln 2018/09/26 v1.74 
+\dashlinedash=\dimen267
+\dashlinegap=\dimen268
+\adl@box=\box55
+\adl@height=\dimen269
+\adl@heightsave=\dimen270
+\adl@depth=\dimen271
+\adl@depthsave=\dimen272
+\adl@finaldepth=\dimen273
+\adl@columns=\count287
+\adl@ncol=\count288
+\adl@currentcolumn=\count289
+\adl@currentcolumnsave=\count290
+\adl@totalheight=\count291
+\adl@totalheightsave=\count292
+\adl@dash=\count293
+\adl@gap=\count294
+\adl@cla=\count295
+\adl@clb=\count296
+\adl@everyvbox=\toks34
+\adl@LTpagetotal=\dimen274
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks35
+\ex@=\dimen275
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen276
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count297
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count298
+\leftroot@=\count299
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count300
+\DOTSCASE@=\count301
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box56
+\strutbox@=\box57
+\big@size=\dimen277
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count302
+\c@MaxMatrixCols=\count303
+\dotsspace@=\muskip16
+\c@parentequation=\count304
+\dspbrk@lvl=\count305
+\tag@help=\toks36
+\row@=\count306
+\column@=\count307
+\maxfields@=\count308
+\andhelp@=\toks37
+\eqnshift@=\dimen278
+\alignsep@=\dimen279
+\tagshift@=\dimen280
+\tagwidth@=\dimen281
+\totwidth@=\dimen282
+\lineht@=\dimen283
+\@envbody=\toks38
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks39
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\l3packages\xfrac\x
+frac.sty
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\l3packages\l3keys2
+e\l3keys2e.sty
+Package: l3keys2e 2018-10-17 LaTeX2e option processing using LaTeX3 keys
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\l3packages\xtempla
+te\xtemplate.sty
+Package: xtemplate 2018-10-17 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen284
+\l__xtemplate_tmp_int=\count309
+\l__xtemplate_tmp_muskip=\muskip17
+\l__xtemplate_tmp_skip=\skip54
+)
+Package: xfrac 2018-10-17 L3 Experimental split-level fractions
+\l__xfrac_slash_box=\box58
+\l__xfrac_tmp_box=\box59
+\l__xfrac_denominator_bot_sep_dim=\dimen285
+\l__xfrac_numerator_bot_sep_dim=\dimen286
+\l__xfrac_numerator_top_sep_dim=\dimen287
+\l__xfrac_slash_left_sep_dim=\dimen288
+\l__xfrac_slash_right_sep_dim=\dimen289
+\l__xfrac_slash_left_muskip=\muskip18
+\l__xfrac_slash_right_muskip=\muskip19
+
+Package xtemplate Info: Declaring object type 'xfrac' taking 3 argument(s) on
+(xtemplate)             line 80.
+
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\esint\esint.sty
+Package: esint 
+\symlargesymbolsA=\mathgroup4
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\jknappen\mathbbol.sty"
+Package: mathbbol 1995/01/01
+\symbbold=\mathgroup7
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)
+LaTeX Font Info:    Try loading font information for T1+cmunrm(0) on input line
+ 105.
+LaTeX Font Info:    No file T1cmunrm(0).fd. on input line 105.
+
+
+LaTeX Font Warning: Font shape `T1/cmunrm(0)/m/n' undefined
+(Font)              using `T1/cmr/m/n' instead on input line 105.
+
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\mathtools\mathtool
+s.sty
+Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count310
+\calc@Bcount=\count311
+\calc@Adimen=\dimen290
+\calc@Bdimen=\dimen291
+\calc@Askip=\skip55
+\calc@Bskip=\skip56
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count312
+\calc@Cskip=\skip57
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\mathtools\mhsetup.
+sty
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count313
+\l_MT_multwidth_dim=\dimen292
+\origjot=\skip58
+\l_MT_shortvdotswithinadjustabove_dim=\dimen293
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen294
+\l_MT_above_intertext_sep=\dimen295
+\l_MT_below_intertext_sep=\dimen296
+\l_MT_above_shortintertext_sep=\dimen297
+\l_MT_below_shortintertext_sep=\dimen298
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\ulem\ulem.sty
+\UL@box=\box60
+\UL@hyphenbox=\box61
+\UL@skip=\skip59
+\UL@hook=\toks40
+\UL@height=\dimen299
+\UL@pe=\count314
+\UL@pixel=\dimen300
+\ULC@box=\box62
+Package: ulem 2012/05/18
+\ULdepth=\dimen301
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\tabu\tabu.sty
+Package: tabu 2011/02/26 v2.8 - flexible LaTeX tabulars (FC)
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\varwidth\varwidth.
+sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box63
+\sift@deathcycles=\count315
+\@vwid@loff=\dimen302
+\@vwid@roff=\dimen303
+)
+\c@taburow=\count316
+\tabu@nbcols=\count317
+\tabu@cnt=\count318
+\tabu@Xcol=\count319
+\tabu@alloc=\count320
+\tabu@nested=\count321
+\tabu@target=\dimen304
+\tabu@spreadtarget=\dimen305
+\tabu@naturalX=\dimen306
+\tabucolX=\dimen307
+\tabu@Xsum=\dimen308
+\extrarowdepth=\dimen309
+\abovetabulinesep=\dimen310
+\belowtabulinesep=\dimen311
+\tabustrutrule=\dimen312
+\tabu@thebody=\toks41
+\tabu@footnotes=\toks42
+\tabu@box=\box64
+\tabu@arstrutbox=\box65
+\tabu@hleads=\box66
+\tabu@vleads=\box67
+\tabu@cellskip=\skip60
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+Package: multicol 2018/04/20 v1.8s multicolumn formatting (FMi)
+\c@tracingmulticols=\count322
+\mult@box=\box68
+\multicol@leftmargin=\dimen313
+\c@unbalance=\count323
+\c@collectmore=\count324
+\doublecol@number=\count325
+\multicoltolerance=\count326
+\multicolpretolerance=\count327
+\full@width=\dimen314
+\page@free=\dimen315
+\premulticols=\dimen316
+\postmulticols=\dimen317
+\multicolsep=\skip61
+\multicolbaselineskip=\skip62
+\partial@page=\box69
+\last@line=\box70
+\maxbalancingoverflow=\dimen318
+\mult@rightbox=\box71
+\mult@grightbox=\box72
+\mult@gfirstbox=\box73
+\mult@firstbox=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\c@columnbadness=\count328
+\c@finalcolumnbadness=\count329
+\last@try=\dimen319
+\multicolovershoot=\dimen320
+\multicolundershoot=\dimen321
+\mult@nat@firstbox=\box92
+\colbreak@box=\box93
+\mc@col@check@num=\count330
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
+\multirow@colwidth=\skip63
+\multirow@cntb=\count331
+\multirow@dima=\skip64
+\bigstrutjot=\dimen322
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\rotating.sty"
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count332
+\rotFPtop=\skip65
+\rotFPbot=\skip66
+\rot@float@box=\box94
+\rot@mess@toks=\toks43
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\contour\contour.st
+y
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: contour 2004/11/18 v2.14 Print contoured text (HH, MH)
+\con@length=\skip67
+
+Loading configuration file `contour.cfg'.
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\contour\contour.cf
+g
+File: contour.cfg 2004/11/18 v2.14 Print contoured text (HH, MH)
+)
+contour: Using driver file `dvips.cnt'.
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\contour\dvips.cnt
+File: dvips.cnt 2004/11/18 v2.14 Print contoured text (HH, MH)
+))
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\easylist\easylist.
+sty
+Package: easylist 2014/01/11 v.1.4 Numbered items with a single command.
+\el@CounterTotal=\count333
+\el@Scratch=\count334
+\el@ControlCounter=\count335
+\el@CounterLevel=\count336
+\c@List1=\count337
+\c@List2=\count338
+\c@List3=\count339
+\c@List4=\count340
+\c@List5=\count341
+\c@List6=\count342
+\c@List7=\count343
+\c@List8=\count344
+\c@List9=\count345
+\c@List10=\count346
+\el@ProgressiveDimension=\dimen323
+\el@CounterBox=\box95
+\el@ControlBox=\box96
+\el@TotalMargin=\dimen324
+\el@LeftMove=\dimen325
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\slashbox\slashbox.
+sty
+slashbox style by K.Yasuoka, May 1993.
+\@slashboxa=\box97
+\@slashboxb=\box98
+\@slashboxc=\box99
+\@slashboxwd=\count347
+\@slashboxht=\count348
+\@slashsepl=\dimen326
+\@slashsepr=\dimen327
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2018/04/06 v1.3b Input encoding file
+\inpenc@prehook=\toks44
+\inpenc@posthook=\toks45
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.
+sty
+\lst@mode=\count349
+\lst@gtempboxa=\box100
+\lst@token=\toks46
+\lst@length=\count350
+\lst@currlwidth=\dimen328
+\lst@column=\count351
+\lst@pos=\count352
+\lst@lostspace=\dimen329
+\lst@width=\dimen330
+\lst@newlines=\count353
+\lst@lineno=\count354
+\lst@maxwidth=\dimen331
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.s
+ty
+File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
+\c@lstnumber=\count355
+\lst@skipnumbers=\count356
+\lst@framebox=\box101
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.
+cfg
+File: listings.cfg 2019/02/27 1.8b listings configuration
+))
+Package: listings 2019/02/27 1.8b (Carsten Heinz)
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\subfig\subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.st
+y
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.s
+ty
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen332
+\captionmargin@=\dimen333
+\captionwidth=\dimen334
+\caption@tempdima=\dimen335
+\caption@indent=\dimen336
+\caption@parindent=\dimen337
+\caption@hangindent=\dimen338
+)
+\c@caption@flags=\count357
+\c@ContinuedFloat=\count358
+Package caption Info: listings package is loaded.
+Package caption Info: rotating package is loaded.
+)
+\c@KVtest=\count359
+\sf@farskip=\skip68
+\sf@captopadj=\dimen339
+\sf@capskip=\skip69
+\sf@nearskip=\skip70
+\c@subfigure=\count360
+\c@subfigure@save=\count361
+\c@lofdepth=\count362
+\c@subtable=\count363
+\c@subtable@save=\count364
+\c@lotdepth=\count365
+\sf@top=\skip71
+\sf@bottom=\skip72
+) (lab4.aux
+
+Package fontspec Info: Font family 'cmunrm(1)' created for font 'cmunrm' with
+(fontspec)             options
+(fontspec)             [Ligatures=TeX,Ligatures=TeX,Extension=.otf,BoldFont=cmu
+nbx,ItalicFont=cmunti,BoldItalicFont=cmunbi,Script=Cyrillic].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[cmunrm.otf]/OT:script=cyrl;language=DFLT;mapping=te
+x-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"[cmunrm.otf]/OT:script=cyrl;language=DFLT;+smcp;mapp
+ing=tex-text;"
+(fontspec)             - 'bold' (bx/n) with NFSS spec.:
+(fontspec)             <->"[cmunbx.otf]/OT:script=cyrl;language=DFLT;mapping=te
+x-text;"
+(fontspec)             - 'bold small caps'  (bx/sc) with NFSS spec.:
+(fontspec)             <->"[cmunbx.otf]/OT:script=cyrl;language=DFLT;+smcp;mapp
+ing=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[cmunti.otf]/OT:script=cyrl;language=DFLT;mapping=te
+x-text;"
+(fontspec)             - 'italic small caps'  (m/itsc) with NFSS spec.: 
+(fontspec)             - 'bold italic' (bx/it) with NFSS spec.:
+(fontspec)             <->"[cmunbi.otf]/OT:script=cyrl;language=DFLT;mapping=te
+x-text;"
+(fontspec)             - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+
+)
+\openout1 = `lab4.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 204.
+LaTeX Font Info:    ... okay on input line 204.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 204.
+LaTeX Font Info:    ... okay on input line 204.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 204.
+LaTeX Font Info:    ... okay on input line 204.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 204.
+LaTeX Font Info:    ... okay on input line 204.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 204.
+LaTeX Font Info:    ... okay on input line 204.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 204.
+LaTeX Font Info:    ... okay on input line 204.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 204.
+LaTeX Font Info:    ... okay on input line 204.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 204.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 204.
+
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 204.
+
+Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
+(fontspec)             this).
+
+\symlegacymaths=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 204.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 204.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 204.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 204.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 204.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 204.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 204.
+LaTeX Font Info:    Redeclaring math accent \check on input line 204.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 204.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 204.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 204.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 204.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 204.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 204.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 204.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 204.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 204.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 204.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 204.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 204.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 204.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 204.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 204.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 204.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 204.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/cmunrm(0)/m/n on input line 204.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 204.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/cmunrm(0)/m/n on input line 204.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/cmunrm(0)/m/n --> TU/cmunrm(0)/m/n on input line 204
+.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/cmunrm(0)/m/it on input line 204.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/cmunrm(0)/bx/n on input line 204.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/Calibri(0)/m/n on input line 204.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/Consolas(0)/m/n on input line 204.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/cmunrm(0)/m/n --> TU/cmunrm(0)/bx/n on input line 20
+4.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/cmunrm(0)/bx/it on input line 204.
+
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/Calibri(0)/bx/n on input line 204.
+
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/Consolas(0)/bx/n on input line 204.
+
+
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=731.23584pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+ABD: EveryShipout initializing macros
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
+ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
+your preamble.
+ on input line 204.
+
+\c@lstlisting=\count366
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+esint on input line 209.
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\esint\uesint.fd
+File: uesint.fd 
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 209.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 209.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+bbold on input line 209.
+
+
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\bbold\ubbold.fd)
+[1
+
+]
+File: ../pics/var5_2d.png Graphic file (type bmp)
+<../pics/var5_2d.png>
+File: ../pics/var5_3d.png Graphic file (type bmp)
+<../pics/var5_3d.png>
+
+Overfull \hbox (18.0pt too wide) in paragraph at lines 268--275
+[] []
+ []
+
+
+Overfull \hbox (2.664pt too wide) in paragraph at lines 268--275
+[]  []
+ []
+
+File: ../pics/var5_2d_zoom.png Graphic file (type bmp)
+<../pics/var5_2d_zoom.png>
+PGFPlots: reading {table1.txt}
+
+! Package pgfplots Error: Table 'table1.txt' appears to have too many columns i
+n line 1: Ignoring ''. PGFPlots found that the number of columns is larger than
+ the previously determined number of columns. Please verify that every cell ent
+ry is separated correctly (use braces {<cell entry>} if necessary. Also verify 
+that column names are plain ASCII.). This error is not critical.
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.289 \inputTableOne{table1.txt}
+                                ^^M
+? return
+OK, entering \nonstopmode...
+
+! Package pgfplots Error: Table 'table1.txt' appears to have too many columns i
+n line 2: Ignoring ''. PGFPlots found that the number of columns is larger than
+ the previously determined number of columns. Please verify that every cell ent
+ry is separated correctly (use braces {<cell entry>} if necessary. Also verify 
+that column names are plain ASCII.). This error is not critical.
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.289 \inputTableOne{table1.txt}
+                                ^^M
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
+
+! Package pgfplots Error: Table 'table1.txt' appears to have too many columns i
+n line 3: Ignoring ''. PGFPlots found that the number of columns is larger than
+ the previously determined number of columns. Please verify that every cell ent
+ry is separated correctly (use braces {<cell entry>} if necessary. Also verify 
+that column names are plain ASCII.). This error is not critical.
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.289 \inputTableOne{table1.txt}
+                                ^^M
+(That was another \errmessage.)
+
+
+! Package pgfplots Error: Table 'table1.txt' appears to have too many columns i
+n line 4: Ignoring ''. PGFPlots found that the number of columns is larger than
+ the previously determined number of columns. Please verify that every cell ent
+ry is separated correctly (use braces {<cell entry>} if necessary. Also verify 
+that column names are plain ASCII.). This error is not critical.
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.289 \inputTableOne{table1.txt}
+                                ^^M
+(That was another \errmessage.)
+
+
+! Package pgfplots Error: Table 'table1.txt' appears to have too many columns i
+n line 5: Ignoring ''. PGFPlots found that the number of columns is larger than
+ the previously determined number of columns. Please verify that every cell ent
+ry is separated correctly (use braces {<cell entry>} if necessary. Also verify 
+that column names are plain ASCII.). This error is not critical.
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.289 \inputTableOne{table1.txt}
+                                ^^M
+(That was another \errmessage.)
+
+[1]
+PGFPlots: reading {table2.txt}
+ [2]
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.
+sty
+File: lstlang1.sty 2019/02/27 1.8b listings language file
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.
+sty
+File: lstlang1.sty 2019/02/27 1.8b listings language file
+)
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.s
+ty
+File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
+)
+
+Package fontspec Info: Font family 'Consolas(1)' created for font 'Consolas'
+(fontspec)             with options
+(fontspec)             [WordSpace={1,0,0},HyphenChar=None,PunctuationSpace=Word
+Space,Script=Cyrillic].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"Consolas/OT:script=cyrl;language=DFLT;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold' (bx/n) with NFSS spec.:
+(fontspec)             <->"Consolas/B/OT:script=cyrl;language=DFLT;"
+(fontspec)             - 'bold small caps'  (bx/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"Consolas/I/OT:script=cyrl;language=DFLT;"
+(fontspec)             - 'italic small caps'  (m/itsc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold italic' (bx/it) with NFSS spec.:
+(fontspec)             <->"Consolas/BI/OT:script=cyrl;language=DFLT;"
+(fontspec)             - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+
+ (../head.h [3] [4] [5]) (../main.cpp [6] [7] [8] [9] [10] [11] [12]
+[13])
+(C:\Users\kozhekin.2016\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.
+sty
+File: lstlang1.sty 2019/02/27 1.8b listings language file
+) (../plot.py [14] [15]) [16] (lab4.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 41267 strings out of 427798
+ 954731 string characters out of 3151796
+ 1512165 words of memory out of 3000000
+ 44630 multiletter control sequences out of 15000+200000
+ 543566 words of font info for 116 fonts, out of 3000000 for 9000
+ 1328 hyphenation exceptions out of 8191
+ 69i,13n,102p,825b,2026s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on lab4.pdf (17 pages).
